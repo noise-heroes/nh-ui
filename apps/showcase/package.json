@@ -9,9 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nh-ui/ui": "workspace:*",
-    "@nh-ui/auth": "workspace:*",
-    "@nh-ui/api": "workspace:*",
     "@heroicons/react": "^2.1.5",
     "@heroui/react": "^2.8.2",
     "framer-motion": "^11.0.0",
