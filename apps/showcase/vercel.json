@@ -1,5 +1,4 @@
 {
   "installCommand": "cd ../.. && pnpm install",
-  "buildCommand": "cd ../.. && pnpm run build:showcase",
-  "devCommand": "pnpm dev"
+  "buildCommand": "cd ../.. && pnpm turbo build --filter=@nh-ui/showcase"
 }

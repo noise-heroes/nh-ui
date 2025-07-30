@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "build:showcase": "turbo build --filter=showcase",
+    "build:showcase": "turbo build --filter=@nh-ui/showcase",
     "preview": "turbo preview",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
