@@ -1,0 +1,9 @@
+{
+  "name": "NH-UI Showcase",
+  "short_name": "NH-UI",
+  "description": "Noise Heroes Design System",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}
