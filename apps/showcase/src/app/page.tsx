@@ -47,7 +47,7 @@ export default function ShowcasePage() {
         
         <h1 className="text-6xl font-bold mb-4">
           Noise Heroes
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+          <span className="nh-gradient-text">
             {" "}UI Kit
           </span>
         </h1>
@@ -113,17 +113,17 @@ export default function ShowcasePage() {
                   <div className="space-y-2">
                     <div className="h-20 bg-primary rounded-lg"></div>
                     <p className="text-sm font-medium">Primary</p>
-                    <Code size="sm">#3B82F6</Code>
+                    <Code size="sm">#FF5500</Code>
                   </div>
                   <div className="space-y-2">
                     <div className="h-20 bg-secondary rounded-lg"></div>
                     <p className="text-sm font-medium">Secondary</p>
-                    <Code size="sm">#A855F7</Code>
+                    <Code size="sm">#00D9B5</Code>
                   </div>
                   <div className="space-y-2">
                     <div className="h-20 bg-success rounded-lg"></div>
                     <p className="text-sm font-medium">Success</p>
-                    <Code size="sm">#14B8A6</Code>
+                    <Code size="sm">#00D9B5</Code>
                   </div>
                 </div>
               </CardBody>
@@ -244,8 +244,8 @@ export default function App() {
           <Card className="p-6">
             <CardBody>
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-primary/20 rounded-lg">
-                  <SparklesIcon className="h-6 w-6 text-primary" />
+                <div className="p-2 bg-[#FF5500]/20 rounded-lg">
+                  <SparklesIcon className="h-6 w-6 text-[#FF5500]" />
                 </div>
                 <h3 className="text-lg font-semibold">Modern Design</h3>
               </div>
@@ -258,8 +258,8 @@ export default function App() {
           <Card className="p-6">
             <CardBody>
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-secondary/20 rounded-lg">
-                  <CodeBracketIcon className="h-6 w-6 text-secondary" />
+                <div className="p-2 bg-[#00D9B5]/20 rounded-lg">
+                  <CodeBracketIcon className="h-6 w-6 text-[#00D9B5]" />
                 </div>
                 <h3 className="text-lg font-semibold">Developer Friendly</h3>
               </div>
@@ -272,8 +272,8 @@ export default function App() {
           <Card className="p-6">
             <CardBody>
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-success/20 rounded-lg">
-                  <RocketLaunchIcon className="h-6 w-6 text-success" />
+                <div className="p-2 bg-[#00D9B5]/20 rounded-lg">
+                  <RocketLaunchIcon className="h-6 w-6 text-[#00D9B5]" />
                 </div>
                 <h3 className="text-lg font-semibold">Production Ready</h3>
               </div>

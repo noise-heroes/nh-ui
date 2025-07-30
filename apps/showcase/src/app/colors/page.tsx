@@ -1,43 +1,91 @@
 "use client";
 
 import { Card, CardBody, CardHeader, Chip, Button } from "@heroui/react";
-import { colors, darkColors, withOpacity } from "@/styles/colors";
+import { colors, darkColors, withOpacity } from "@nh-ui/ui";
 
 export default function ColorsPage() {
   return (
     <div className="min-h-screen p-8 max-w-7xl mx-auto">
       <div className="mb-12">
-        <h1 className="text-5xl font-bold mb-4">Color System</h1>
+        <h1 className="text-5xl font-bold mb-4">Official Color System</h1>
         <p className="text-xl text-gray-600">
-          Noise Heroes color palette designed for modern music applications
+          Noise Heroes official colors: Black, White, Orange (#FF5500), and Teal (#00D9B5)
         </p>
       </div>
 
-      {/* Brand Colors */}
+      {/* Official Brand Colors */}
       <Card className="mb-12">
         <CardHeader>
-          <h2 className="text-2xl font-semibold">Brand Colors</h2>
+          <h2 className="text-2xl font-semibold">Official Brand Colors</h2>
         </CardHeader>
         <CardBody>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div>
-              <div className="h-32 rounded-xl bg-[#3B82F6] mb-4 shadow-lg"></div>
-              <h3 className="font-semibold mb-1">Primary Blue</h3>
-              <code className="text-sm text-gray-600">#3B82F6</code>
-              <p className="text-sm text-gray-500 mt-2">Main brand color for primary actions</p>
+              <div className="h-32 rounded-xl bg-black mb-4 shadow-lg border border-gray-200"></div>
+              <h3 className="font-semibold mb-1">Black</h3>
+              <code className="text-sm text-gray-600">#000000</code>
+              <p className="text-sm text-gray-500 mt-2">Pure black for maximum contrast</p>
             </div>
             <div>
-              <div className="h-32 rounded-xl bg-[#A855F7] mb-4 shadow-lg"></div>
-              <h3 className="font-semibold mb-1">Secondary Purple</h3>
-              <code className="text-sm text-gray-600">#A855F7</code>
-              <p className="text-sm text-gray-500 mt-2">Accent color for creative elements</p>
+              <div className="h-32 rounded-xl bg-white mb-4 shadow-lg border border-gray-200"></div>
+              <h3 className="font-semibold mb-1">White</h3>
+              <code className="text-sm text-gray-600">#FFFFFF</code>
+              <p className="text-sm text-gray-500 mt-2">Pure white for clean backgrounds</p>
             </div>
             <div>
-              <div className="h-32 rounded-xl bg-[#14B8A6] mb-4 shadow-lg"></div>
-              <h3 className="font-semibold mb-1">Tertiary Teal</h3>
-              <code className="text-sm text-gray-600">#14B8A6</code>
-              <p className="text-sm text-gray-500 mt-2">Success states and positive actions</p>
+              <div className="h-32 rounded-xl bg-[#FF5500] mb-4 shadow-lg"></div>
+              <h3 className="font-semibold mb-1">Orange</h3>
+              <code className="text-sm text-gray-600">#FF5500</code>
+              <p className="text-sm text-gray-500 mt-2">Primary brand color for energy</p>
             </div>
+            <div>
+              <div className="h-32 rounded-xl bg-[#00D9B5] mb-4 shadow-lg"></div>
+              <h3 className="font-semibold mb-1">Teal</h3>
+              <code className="text-sm text-gray-600">#00D9B5</code>
+              <p className="text-sm text-gray-500 mt-2">Secondary color for balance</p>
+            </div>
+          </div>
+        </CardBody>
+      </Card>
+
+      {/* Extended Orange Palette */}
+      <Card className="mb-12">
+        <CardHeader>
+          <h2 className="text-2xl font-semibold">Orange Palette</h2>
+        </CardHeader>
+        <CardBody>
+          <div className="grid grid-cols-6 gap-4">
+            {Object.entries(colors.orange).map(([key, value]) => (
+              <div key={key}>
+                <div 
+                  className="h-20 rounded-lg mb-2 border border-gray-200"
+                  style={{ backgroundColor: value }}
+                ></div>
+                <p className="text-sm font-medium">{key}</p>
+                <code className="text-xs text-gray-500">{value}</code>
+              </div>
+            ))}
+          </div>
+        </CardBody>
+      </Card>
+
+      {/* Extended Teal Palette */}
+      <Card className="mb-12">
+        <CardHeader>
+          <h2 className="text-2xl font-semibold">Teal Palette</h2>
+        </CardHeader>
+        <CardBody>
+          <div className="grid grid-cols-6 gap-4">
+            {Object.entries(colors.teal).map(([key, value]) => (
+              <div key={key}>
+                <div 
+                  className="h-20 rounded-lg mb-2 border border-gray-200"
+                  style={{ backgroundColor: value }}
+                ></div>
+                <p className="text-sm font-medium">{key}</p>
+                <code className="text-xs text-gray-500">{value}</code>
+              </div>
+            ))}
           </div>
         </CardBody>
       </Card>
@@ -45,7 +93,7 @@ export default function ColorsPage() {
       {/* Gradients */}
       <Card className="mb-12">
         <CardHeader>
-          <h2 className="text-2xl font-semibold">Gradients</h2>
+          <h2 className="text-2xl font-semibold">Brand Gradients</h2>
         </CardHeader>
         <CardBody>
           <div className="grid grid-cols-2 gap-6">
@@ -55,31 +103,31 @@ export default function ColorsPage() {
                 style={{ background: colors.gradients.brand }}
               ></div>
               <h3 className="font-semibold mb-1">Brand Gradient</h3>
-              <p className="text-sm text-gray-500">Primary to Secondary blend</p>
+              <p className="text-sm text-gray-500">Orange to Teal blend</p>
             </div>
             <div>
               <div 
                 className="h-32 rounded-xl mb-4 shadow-lg"
-                style={{ background: colors.gradients.electric }}
+                style={{ background: colors.gradients.orangeFade }}
               ></div>
-              <h3 className="font-semibold mb-1">Electric Gradient</h3>
-              <p className="text-sm text-gray-500">High energy creative moments</p>
+              <h3 className="font-semibold mb-1">Orange Fade</h3>
+              <p className="text-sm text-gray-500">Soft orange gradient</p>
             </div>
             <div>
               <div 
                 className="h-32 rounded-xl mb-4 shadow-lg"
-                style={{ background: colors.gradients.ocean }}
+                style={{ background: colors.gradients.blackToOrange }}
               ></div>
-              <h3 className="font-semibold mb-1">Ocean Gradient</h3>
-              <p className="text-sm text-gray-500">Calm and professional</p>
+              <h3 className="font-semibold mb-1">Black to Orange</h3>
+              <p className="text-sm text-gray-500">Dramatic dark gradient</p>
             </div>
             <div>
               <div 
                 className="h-32 rounded-xl mb-4 shadow-lg"
-                style={{ background: colors.gradients.sunset }}
+                style={{ background: colors.gradients.whiteToTeal }}
               ></div>
-              <h3 className="font-semibold mb-1">Sunset Gradient</h3>
-              <p className="text-sm text-gray-500">Warm and inviting</p>
+              <h3 className="font-semibold mb-1">White to Teal</h3>
+              <p className="text-sm text-gray-500">Light and fresh gradient</p>
             </div>
           </div>
         </CardBody>
@@ -91,48 +139,25 @@ export default function ColorsPage() {
           <h2 className="text-2xl font-semibold">Functional Colors</h2>
         </CardHeader>
         <CardBody>
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-3 gap-6">
             <div>
-              <div className="h-24 rounded-xl bg-[#14B8A6] mb-4"></div>
-              <h3 className="font-semibold mb-1">Success</h3>
-              <code className="text-sm text-gray-600">#14B8A6</code>
+              <div className="h-24 rounded-xl bg-[#FF5500] mb-4"></div>
+              <h3 className="font-semibold mb-1">Primary/Warning</h3>
+              <code className="text-sm text-gray-600">#FF5500</code>
+              <p className="text-sm text-gray-500">Orange for primary actions and warnings</p>
             </div>
             <div>
-              <div className="h-24 rounded-xl bg-[#F59E0B] mb-4"></div>
-              <h3 className="font-semibold mb-1">Warning</h3>
-              <code className="text-sm text-gray-600">#F59E0B</code>
+              <div className="h-24 rounded-xl bg-[#00D9B5] mb-4"></div>
+              <h3 className="font-semibold mb-1">Secondary/Success</h3>
+              <code className="text-sm text-gray-600">#00D9B5</code>
+              <p className="text-sm text-gray-500">Teal for success and secondary actions</p>
             </div>
             <div>
-              <div className="h-24 rounded-xl bg-[#EF4444] mb-4"></div>
+              <div className="h-24 rounded-xl bg-[#FF3333] mb-4"></div>
               <h3 className="font-semibold mb-1">Danger</h3>
-              <code className="text-sm text-gray-600">#EF4444</code>
+              <code className="text-sm text-gray-600">#FF3333</code>
+              <p className="text-sm text-gray-500">Bright red for errors and dangers</p>
             </div>
-            <div>
-              <div className="h-24 rounded-xl bg-[#3B82F6] mb-4"></div>
-              <h3 className="font-semibold mb-1">Info</h3>
-              <code className="text-sm text-gray-600">#3B82F6</code>
-            </div>
-          </div>
-        </CardBody>
-      </Card>
-
-      {/* Neutral Palette */}
-      <Card className="mb-12">
-        <CardHeader>
-          <h2 className="text-2xl font-semibold">Neutral Palette</h2>
-        </CardHeader>
-        <CardBody>
-          <div className="grid grid-cols-6 gap-4">
-            {Object.entries(colors.neutral).map(([key, value]) => (
-              <div key={key}>
-                <div 
-                  className="h-20 rounded-lg mb-2 border border-gray-200"
-                  style={{ backgroundColor: value }}
-                ></div>
-                <p className="text-sm font-medium">{key}</p>
-                <code className="text-xs text-gray-500">{value}</code>
-              </div>
-            ))}
           </div>
         </CardBody>
       </Card>
@@ -148,42 +173,38 @@ export default function ColorsPage() {
             <div className="flex gap-4">
               <Button 
                 color="primary" 
-                className="shadow-lg"
-                style={{ boxShadow: colors.effects.glow.primary }}
+                className="nh-glow-orange"
               >
-                Primary Glow
+                Orange Glow
               </Button>
               <Button 
                 color="secondary" 
-                className="shadow-lg"
-                style={{ boxShadow: colors.effects.glow.secondary }}
+                className="nh-glow-teal"
               >
-                Secondary Glow
+                Teal Glow
               </Button>
               <Button 
-                color="success" 
-                className="shadow-lg"
-                style={{ boxShadow: colors.effects.glow.success }}
+                variant="bordered" 
+                className="border-white text-white bg-black nh-glow"
+                style={{ boxShadow: colors.effects.glow.white }}
               >
-                Success Glow
+                White Glow
               </Button>
             </div>
           </div>
           
           <div>
-            <h3 className="font-semibold mb-4">Neon Effects</h3>
+            <h3 className="font-semibold mb-4">Neon Effects (Dark Mode)</h3>
             <div className="flex gap-4">
               <div 
-                className="px-6 py-3 rounded-lg bg-gray-900 text-white font-semibold"
-                style={{ boxShadow: colors.effects.neon.primary }}
+                className="px-6 py-3 rounded-lg bg-gray-900 text-white font-semibold nh-neon-orange"
               >
-                Neon Primary
+                Neon Orange
               </div>
               <div 
-                className="px-6 py-3 rounded-lg bg-gray-900 text-white font-semibold"
-                style={{ boxShadow: colors.effects.neon.secondary }}
+                className="px-6 py-3 rounded-lg bg-gray-900 text-white font-semibold nh-neon-teal"
               >
-                Neon Secondary
+                Neon Teal
               </div>
             </div>
           </div>
@@ -198,22 +219,22 @@ export default function ColorsPage() {
         <CardBody className="prose max-w-none">
           <ul className="space-y-2">
             <li>
-              <strong>Primary Blue:</strong> Use for primary CTAs, links, and key interactive elements
+              <strong>Orange (#FF5500):</strong> Use for primary CTAs, links, warnings, and high-energy elements
             </li>
             <li>
-              <strong>Secondary Purple:</strong> Use for creative features, premium content, and accent elements
+              <strong>Teal (#00D9B5):</strong> Use for success states, secondary actions, and calming elements
             </li>
             <li>
-              <strong>Tertiary Teal:</strong> Use for success states, positive feedback, and confirmations
+              <strong>Black (#000000):</strong> Use for text, dark backgrounds, and maximum contrast
             </li>
             <li>
-              <strong>Gradients:</strong> Use sparingly for hero sections, premium features, and special moments
+              <strong>White (#FFFFFF):</strong> Use for light backgrounds, text on dark backgrounds
             </li>
             <li>
-              <strong>Neutrals:</strong> Use for text, backgrounds, and UI structure following contrast guidelines
+              <strong>Gradients:</strong> Use brand gradient for hero sections and special emphasis
             </li>
             <li>
-              <strong>Effects:</strong> Reserve glow and neon effects for interactive states and special emphasis
+              <strong>Effects:</strong> Reserve glow and neon effects for interactive states and CTAs
             </li>
           </ul>
         </CardBody>

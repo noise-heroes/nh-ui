@@ -1,44 +1,80 @@
-// Noise Heroes Color System
-// Primary color palette with semantic naming and accessibility considerations
+// Noise Heroes Official Color System
+// Based on official brand colors: #000, #FFF, #FF5500, #00D9B5
 
 export const colors = {
-  // Brand Colors
+  // Official Brand Colors
   brand: {
-    primary: '#3B82F6',    // Bright Blue - Main brand color
-    secondary: '#A855F7',  // Purple - Accent color
-    tertiary: '#14B8A6',   // Teal - Success/positive actions
+    black: '#000000',      // Pure Black
+    white: '#FFFFFF',      // Pure White
+    orange: '#FF5500',     // Noise Heroes Orange (Primary)
+    teal: '#00D9B5',       // Noise Heroes Teal (Secondary)
   },
   
-  // Neutral Palette (Based on Neue Haas aesthetic)
+  // Extended Brand Palette (shades of official colors)
+  orange: {
+    50: '#FFF5F0',
+    100: '#FFE5D9',
+    200: '#FFC7AD',
+    300: '#FFA380',
+    400: '#FF7F54',
+    500: '#FF5500',   // Official Orange
+    600: '#E64D00',
+    700: '#CC4400',
+    800: '#B33C00',
+    900: '#803300',
+    950: '#4D1F00',
+  },
+  
+  teal: {
+    50: '#F0FFFC',
+    100: '#D9FFF7',
+    200: '#B3FFEF',
+    300: '#80FFE5',
+    400: '#4DFFDB',
+    500: '#00D9B5',   // Official Teal
+    600: '#00C3A3',
+    700: '#00AD91',
+    800: '#009980',
+    900: '#00806B',
+    950: '#004D40',
+  },
+  
+  // Neutral Palette (Black to White)
   neutral: {
-    50: '#FAFAFA',
-    100: '#F5F5F5',
-    200: '#E5E5E5',
-    300: '#D4D4D4',
-    400: '#A3A3A3',
+    0: '#000000',      // Pure Black
+    50: '#0A0A0A',
+    100: '#171717',
+    200: '#262626',
+    300: '#404040',
+    400: '#525252',
     500: '#737373',
-    600: '#525252',
-    700: '#404040',
-    800: '#262626',
-    900: '#171717',
-    950: '#0A0A0A',
+    600: '#A3A3A3',
+    700: '#D4D4D4',
+    800: '#E5E5E5',
+    900: '#F5F5F5',
+    950: '#FAFAFA',
+    1000: '#FFFFFF',   // Pure White
   },
   
-  // Functional Colors
+  // Functional Colors (using brand colors)
   functional: {
-    success: '#14B8A6',    // Teal
-    warning: '#F59E0B',    // Amber
-    danger: '#EF4444',     // Red
-    info: '#3B82F6',       // Blue (same as primary)
+    primary: '#FF5500',    // Orange - Primary actions
+    secondary: '#00D9B5',  // Teal - Secondary actions
+    success: '#00D9B5',    // Teal - Success states
+    warning: '#FF5500',    // Orange - Warning states
+    danger: '#FF3333',     // Bright Red - Error states
+    info: '#00D9B5',       // Teal - Information
   },
   
-  // Gradients
+  // Gradients using official colors
   gradients: {
-    brand: 'linear-gradient(135deg, #3B82F6 0%, #A855F7 100%)',
-    electric: 'linear-gradient(135deg, #A855F7 0%, #EC4899 100%)',
-    ocean: 'linear-gradient(135deg, #3B82F6 0%, #14B8A6 100%)',
-    sunset: 'linear-gradient(135deg, #F59E0B 0%, #EF4444 100%)',
-    dark: 'linear-gradient(135deg, #404040 0%, #171717 100%)',
+    brand: 'linear-gradient(135deg, #FF5500 0%, #00D9B5 100%)',
+    orangeFade: 'linear-gradient(135deg, #FF5500 0%, #FF7F54 100%)',
+    tealFade: 'linear-gradient(135deg, #00D9B5 0%, #4DFFDB 100%)',
+    blackToOrange: 'linear-gradient(135deg, #000000 0%, #FF5500 100%)',
+    blackToTeal: 'linear-gradient(135deg, #000000 0%, #00D9B5 100%)',
+    whiteToOrange: 'linear-gradient(135deg, #FFFFFF 0%, #FF5500 100%)',
+    whiteToTeal: 'linear-gradient(135deg, #FFFFFF 0%, #00D9B5 100%)',
   },
   
   // Overlays
@@ -47,27 +83,32 @@ export const colors = {
     medium: 'rgba(255, 255, 255, 0.2)',
     heavy: 'rgba(255, 255, 255, 0.3)',
     dark: 'rgba(0, 0, 0, 0.5)',
+    darkMedium: 'rgba(0, 0, 0, 0.7)',
+    darkHeavy: 'rgba(0, 0, 0, 0.9)',
   },
   
-  // Shadows (for elevation)
+  // Shadows (using black with opacity)
   shadows: {
     sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
     md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
     lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
     xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
     '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+    orange: '0 10px 40px -10px rgba(255, 85, 0, 0.4)',
+    teal: '0 10px 40px -10px rgba(0, 217, 181, 0.4)',
   },
   
-  // Special Effects
+  // Special Effects with brand colors
   effects: {
     glow: {
-      primary: '0 0 20px rgba(59, 130, 246, 0.5)',
-      secondary: '0 0 20px rgba(168, 85, 247, 0.5)',
-      success: '0 0 20px rgba(20, 184, 166, 0.5)',
+      orange: '0 0 20px rgba(255, 85, 0, 0.5)',
+      teal: '0 0 20px rgba(0, 217, 181, 0.5)',
+      white: '0 0 20px rgba(255, 255, 255, 0.5)',
     },
     neon: {
-      primary: '0 0 40px rgba(59, 130, 246, 0.8), 0 0 80px rgba(59, 130, 246, 0.4)',
-      secondary: '0 0 40px rgba(168, 85, 247, 0.8), 0 0 80px rgba(168, 85, 247, 0.4)',
+      orange: '0 0 40px rgba(255, 85, 0, 0.8), 0 0 80px rgba(255, 85, 0, 0.4)',
+      teal: '0 0 40px rgba(0, 217, 181, 0.8), 0 0 80px rgba(0, 217, 181, 0.4)',
+      white: '0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(255, 255, 255, 0.4)',
     },
   },
 };
@@ -75,36 +116,36 @@ export const colors = {
 // Dark mode color adjustments
 export const darkColors = {
   brand: {
-    primary: '#60A5FA',    // Lighter blue for dark mode
-    secondary: '#C084FC',  // Lighter purple for dark mode
-    tertiary: '#2DD4BF',   // Lighter teal for dark mode
+    orange: '#FF7F54',    // Lighter orange for dark mode
+    teal: '#4DFFDB',      // Lighter teal for dark mode
   },
   
   functional: {
-    success: '#2DD4BF',
-    warning: '#FCD34D',
-    danger: '#F87171',
-    info: '#60A5FA',
+    primary: '#FF7F54',
+    secondary: '#4DFFDB',
+    success: '#4DFFDB',
+    warning: '#FFA380',
+    danger: '#FF6666',
+    info: '#4DFFDB',
   },
 };
 
 // Semantic color mappings
 export const semanticColors = {
   background: {
-    default: 'white',
-    secondary: colors.neutral[50],
-    tertiary: colors.neutral[100],
+    light: colors.brand.white,
+    dark: colors.brand.black,
   },
   
   foreground: {
-    default: colors.neutral[900],
-    secondary: colors.neutral[700],
-    tertiary: colors.neutral[500],
+    light: colors.brand.black,
+    dark: colors.brand.white,
   },
   
   border: {
-    default: colors.neutral[200],
-    focus: colors.brand.primary,
+    light: colors.neutral[200],
+    dark: colors.neutral[800],
+    focus: colors.brand.orange,
     error: colors.functional.danger,
   },
 };

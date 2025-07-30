@@ -43,10 +43,30 @@ code, pre {
   animation: nh-glow-pulse 2s ease-in-out infinite;
 }
 
+.nh-glow-orange {
+  animation: nh-glow-pulse-orange 2s ease-in-out infinite;
+}
+
+.nh-glow-teal {
+  animation: nh-glow-pulse-teal 2s ease-in-out infinite;
+}
+
 @keyframes nh-glow-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-  50% { box-shadow: 0 0 20px 10px rgba(59, 130, 246, 0.3); }
-  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
+  50% { box-shadow: 0 0 20px 10px rgba(255, 85, 0, 0.3); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
+}
+
+@keyframes nh-glow-pulse-orange {
+  0% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
+  50% { box-shadow: 0 0 30px 15px rgba(255, 85, 0, 0.4); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
+}
+
+@keyframes nh-glow-pulse-teal {
+  0% { box-shadow: 0 0 0 0 rgba(0, 217, 181, 0); }
+  50% { box-shadow: 0 0 30px 15px rgba(0, 217, 181, 0.4); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 217, 181, 0); }
 }
 
 /* Smooth transitions for theme switching */
@@ -78,14 +98,25 @@ code, pre {
 }
 
 /* Neon glow effects for dark mode */
+.dark .nh-neon-orange {
+  box-shadow: 0 0 30px rgba(255, 85, 0, 0.5),
+              inset 0 0 10px rgba(255, 85, 0, 0.2);
+}
+
+.dark .nh-neon-teal {
+  box-shadow: 0 0 30px rgba(0, 217, 181, 0.5),
+              inset 0 0 10px rgba(0, 217, 181, 0.2);
+}
+
+/* Legacy names for compatibility */
 .dark .nh-neon-primary {
-  box-shadow: 0 0 30px rgba(96, 165, 250, 0.5),
-              inset 0 0 10px rgba(96, 165, 250, 0.2);
+  box-shadow: 0 0 30px rgba(255, 85, 0, 0.5),
+              inset 0 0 10px rgba(255, 85, 0, 0.2);
 }
 
 .dark .nh-neon-secondary {
-  box-shadow: 0 0 30px rgba(192, 132, 252, 0.5),
-              inset 0 0 10px rgba(192, 132, 252, 0.2);
+  box-shadow: 0 0 30px rgba(0, 217, 181, 0.5),
+              inset 0 0 10px rgba(0, 217, 181, 0.2);
 }
 
 /* Glass morphism for dark mode */
@@ -117,7 +148,7 @@ code, pre {
 
 /* Gradient text animation */
 .nh-gradient-text {
-  background: linear-gradient(135deg, #3B82F6 0%, #A855F7 100%);
+  background: linear-gradient(135deg, #FF5500 0%, #00D9B5 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
