@@ -19,7 +19,7 @@ export function NHLogo({ className = "h-8 w-auto", width, height }: NHLogoProps)
 
   // Use resolvedTheme to handle system theme preference
   const currentTheme = mounted ? (resolvedTheme || theme) : 'light';
-  const fillColor = currentTheme === 'dark' ? '#FFFFFF' : '#000000';
+  const fillColor = currentTheme === 'dark' ? '#FFFFFF' : '#FF5500';
 
   if (!mounted) {
     // Return a placeholder with the same dimensions to prevent layout shift
@@ -65,7 +65,9 @@ export function NHLogoFromFile({ className = "h-8 w-auto" }: NHLogoProps) {
         alt="Noise Heroes" 
         className={className}
         style={{
-          filter: currentTheme === 'light' ? 'invert(1)' : 'none',
+          filter: currentTheme === 'light' 
+            ? 'brightness(0) saturate(100%) invert(27%) sepia(84%) saturate(2515%) hue-rotate(5deg) brightness(95%) contrast(103%)' 
+            : 'none',
           transition: 'filter 0.3s ease',
         }}
       />

@@ -7,3 +7,4 @@ export { NHGlassSection } from './nh-glass-section';
 export { NHIconButton } from './nh-icon-button';
 export { NHNav } from './nh-nav';
 export { NHMinimalCard } from './nh-minimal-card';
+export { NHWallpaper } from './nh-wallpaper';

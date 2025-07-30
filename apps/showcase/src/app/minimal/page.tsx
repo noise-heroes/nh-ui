@@ -4,7 +4,8 @@ import dynamic from 'next/dynamic';
 import { 
   NHButton,
   NHIconButton,
-  NHNav
+  NHNav,
+  NHWallpaper
 } from "@nh-ui/ui";
 
 const NHMinimalCard = dynamic(
@@ -57,7 +58,8 @@ export default function MinimalDesignPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black">
+    <div className="min-h-screen">
+      <NHWallpaper variant="subtle" animated />
       {/* Hero Section */}
       <NHGlassSection blur="xl" className="m-8">
         <div className="max-w-4xl mx-auto text-center">

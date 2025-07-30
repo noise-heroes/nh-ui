@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from 'next/dynamic';
-import { NHButton } from "@nh-ui/ui";
+import { NHButton, NHWallpaper } from "@nh-ui/ui";
 
 const NHGlassCard = dynamic(
   () => import("@nh-ui/ui").then(mod => ({ default: mod.NHGlassCard })),
@@ -34,7 +34,8 @@ import {
 
 export default function GlassDesignPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-teal-50 dark:from-gray-900 dark:via-black dark:to-gray-900">
+    <div className="min-h-screen">
+      <NHWallpaper variant="mesh" animated />
       {/* Hero Section with Glass */}
       <NHGlassSection blur="xl" className="m-8">
         <div className="max-w-4xl mx-auto text-center">
