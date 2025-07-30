@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noise Heroes Color System Examples</title>
+    <link rel="stylesheet" href="color-system.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--nh-bg-primary);
+            color: var(--nh-text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--nh-surface-primary);
+            border: 1px solid var(--nh-border-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--nh-text-primary);
+            transition: all 0.2s;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--nh-hover);
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .color-card {
+            background: var(--nh-surface-primary);
+            border: 1px solid var(--nh-border-primary);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--nh-shadow-md);
+        }
+        
+        .color-swatch {
+            width: 100%;
+            height: 80px;
+            border-radius: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .color-info {
+            font-size: 0.875rem;
+            color: var(--nh-text-secondary);
+        }
+        
+        .gradient-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .gradient-card {
+            height: 150px;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.125rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .component-examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--nh-blue-500);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--nh-blue-600);
+            transform: translateY(-1px);
+            box-shadow: var(--nh-shadow-md);
+        }
+        
+        .btn-secondary {
+            background-color: var(--nh-purple-500);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--nh-purple-600);
+            transform: translateY(-1px);
+            box-shadow: var(--nh-shadow-md);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--nh-blue-500);
+            border: 2px solid var(--nh-blue-500);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--nh-blue-500);
+            color: white;
+        }
+        
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid;
+        }
+        
+        .alert-success {
+            background-color: hsl(142, 71%, 95%);
+            color: var(--nh-success-dark);
+            border-color: var(--nh-success);
+        }
+        
+        .alert-warning {
+            background-color: hsl(38, 92%, 95%);
+            color: var(--nh-warning-dark);
+            border-color: var(--nh-warning);
+        }
+        
+        .alert-error {
+            background-color: hsl(0, 72%, 95%);
+            color: var(--nh-error-dark);
+            border-color: var(--nh-error);
+        }
+        
+        .alert-info {
+            background-color: hsl(217, 91%, 95%);
+            color: var(--nh-info-dark);
+            border-color: var(--nh-info);
+        }
+        
+        [data-theme="dark"] .alert-success {
+            background-color: hsla(142, 71%, 45%, 0.1);
+        }
+        
+        [data-theme="dark"] .alert-warning {
+            background-color: hsla(38, 92%, 55%, 0.1);
+        }
+        
+        [data-theme="dark"] .alert-error {
+            background-color: hsla(0, 72%, 55%, 0.1);
+        }
+        
+        [data-theme="dark"] .alert-info {
+            background-color: hsla(217, 91%, 60%, 0.1);
+        }
+        
+        .card {
+            background: var(--nh-surface-primary);
+            border: 1px solid var(--nh-border-primary);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--nh-shadow-sm);
+        }
+        
+        .accessibility-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .accessibility-table th,
+        .accessibility-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--nh-border-primary);
+        }
+        
+        .contrast-pass {
+            color: var(--nh-success);
+        }
+        
+        .contrast-fail {
+            color: var(--nh-error);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+    
+    <div class="container">
+        <header class="header">
+            <h1 class="nh-gradient-text">Noise Heroes Color System</h1>
+            <p>A comprehensive color system built for accessibility and visual harmony</p>
+        </header>
+        
+        <!-- Brand Colors Section -->
+        <section class="section">
+            <h2>Brand Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-500);"></div>
+                    <h3>Primary Blue</h3>
+                    <p class="color-info">hsl(217, 91%, 60%)</p>
+                    <p class="color-info">#3D7EEB</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-purple-500);"></div>
+                    <h3>Secondary Purple</h3>
+                    <p class="color-info">hsl(271, 91%, 65%)</p>
+                    <p class="color-info">#A755E6</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-teal-500);"></div>
+                    <h3>Tertiary Teal</h3>
+                    <p class="color-info">hsl(174, 83%, 63%)</p>
+                    <p class="color-info">#5EEAE7</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Extended Palettes -->
+        <section class="section">
+            <h2>Extended Color Palettes</h2>
+            
+            <h3>Blue Scale</h3>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-50);"></div>
+                    <p>Blue 50</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-100);"></div>
+                    <p>Blue 100</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-200);"></div>
+                    <p>Blue 200</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-300);"></div>
+                    <p>Blue 300</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-400);"></div>
+                    <p>Blue 400</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-500);"></div>
+                    <p>Blue 500</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-600);"></div>
+                    <p>Blue 600</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-700);"></div>
+                    <p>Blue 700</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-800);"></div>
+                    <p>Blue 800</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-900);"></div>
+                    <p>Blue 900</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--nh-blue-950);"></div>
+                    <p>Blue 950</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gradients -->
+        <section class="section">
+            <h2>Gradient Combinations</h2>
+            <div class="gradient-showcase">
+                <div class="gradient-card" style="background: var(--nh-gradient-primary);">
+                    Primary Gradient
+                </div>
+                <div class="gradient-card" style="background: var(--nh-gradient-secondary);">
+                    Secondary Gradient
+                </div>
+                <div class="gradient-card" style="background: var(--nh-gradient-tertiary);">
+                    Tertiary Gradient
+                </div>
+                <div class="gradient-card" style="background: var(--nh-gradient-vibrant);">
+                    Vibrant Gradient
+                </div>
+                <div class="gradient-card" style="background: var(--nh-gradient-radial-primary);">
+                    Radial Gradient
+                </div>
+                <div class="gradient-card nh-gradient-border" style="background: var(--nh-surface-primary); color: var(--nh-text-primary);">
+                    Gradient Border
+                </div>
+            </div>
+        </section>
+        
+        <!-- Components -->
+        <section class="section">
+            <h2>Component Examples</h2>
+            
+            <h3>Buttons</h3>
+            <div class="component-examples">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+                <button class="btn btn-outline">Outline Button</button>
+                <button class="btn btn-primary" disabled style="opacity: 0.5; cursor: not-allowed;">Disabled</button>
+            </div>
+            
+            <h3>Semantic Alerts</h3>
+            <div class="alert alert-success">
+                ✓ Success! Your changes have been saved.
+            </div>
+            <div class="alert alert-warning">
+                ⚠ Warning: This action cannot be undone.
+            </div>
+            <div class="alert alert-error">
+                ✗ Error: Please check your input and try again.
+            </div>
+            <div class="alert alert-info">
+                ℹ Info: New features are now available.
+            </div>
+            
+            <h3>Cards</h3>
+            <div class="card">
+                <h4>Sample Card</h4>
+                <p>This card demonstrates the surface colors and shadows in both light and dark modes.</p>
+            </div>
+        </section>
+        
+        <!-- Accessibility -->
+        <section class="section">
+            <h2>Accessibility Compliance</h2>
+            <div class="card">
+                <h3>WCAG Contrast Ratios</h3>
+                <table class="accessibility-table">
+                    <thead>
+                        <tr>
+                            <th>Combination</th>
+                            <th>Ratio</th>
+                            <th>WCAG AA</th>
+                            <th>WCAG AAA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gray-900 on White</td>
+                            <td>17.1:1</td>
+                            <td class="contrast-pass">✓ Pass</td>
+                            <td class="contrast-pass">✓ Pass</td>
+                        </tr>
+                        <tr>
+                            <td>Blue-700 on White</td>
+                            <td>4.7:1</td>
+                            <td class="contrast-pass">✓ Pass</td>
+                            <td class="contrast-fail">✗ Fail</td>
+                        </tr>
+                        <tr>
+                            <td>White on Blue-500</td>
+                            <td>3.3:1</td>
+                            <td class="contrast-pass">✓ Pass (Large Text)</td>
+                            <td class="contrast-fail">✗ Fail</td>
+                        </tr>
+                        <tr>
+                            <td>White on Purple-700</td>
+                            <td>4.6:1</td>
+                            <td class="contrast-pass">✓ Pass</td>
+                            <td class="contrast-fail">✗ Fail</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html>

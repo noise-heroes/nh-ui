@@ -1,0 +1,228 @@
+/* Noise Heroes Enhanced Color System */
+/* Generated for both light and dark modes with WCAG compliance */
+
+:root {
+  /* Core Brand Colors - Extended Palette */
+  
+  /* Blue Scale - Primary Brand Color */
+  --nh-blue-50: hsl(217, 91%, 97%);
+  --nh-blue-100: hsl(217, 91%, 94%);
+  --nh-blue-200: hsl(217, 91%, 88%);
+  --nh-blue-300: hsl(217, 91%, 80%);
+  --nh-blue-400: hsl(217, 91%, 70%);
+  --nh-blue-500: hsl(217, 91%, 60%); /* Brand Blue */
+  --nh-blue-600: hsl(217, 91%, 50%);
+  --nh-blue-700: hsl(217, 91%, 40%);
+  --nh-blue-800: hsl(217, 91%, 30%);
+  --nh-blue-900: hsl(217, 91%, 20%);
+  --nh-blue-950: hsl(217, 91%, 10%);
+  
+  /* Purple Scale - Secondary Brand Color */
+  --nh-purple-50: hsl(271, 91%, 97%);
+  --nh-purple-100: hsl(271, 91%, 94%);
+  --nh-purple-200: hsl(271, 91%, 88%);
+  --nh-purple-300: hsl(271, 91%, 80%);
+  --nh-purple-400: hsl(271, 91%, 72%);
+  --nh-purple-500: hsl(271, 91%, 65%); /* Brand Purple */
+  --nh-purple-600: hsl(271, 91%, 55%);
+  --nh-purple-700: hsl(271, 91%, 45%);
+  --nh-purple-800: hsl(271, 91%, 35%);
+  --nh-purple-900: hsl(271, 91%, 25%);
+  --nh-purple-950: hsl(271, 91%, 15%);
+  
+  /* Teal Scale - Tertiary Brand Color */
+  --nh-teal-50: hsl(174, 83%, 97%);
+  --nh-teal-100: hsl(174, 83%, 94%);
+  --nh-teal-200: hsl(174, 83%, 87%);
+  --nh-teal-300: hsl(174, 83%, 78%);
+  --nh-teal-400: hsl(174, 83%, 70%);
+  --nh-teal-500: hsl(174, 83%, 63%); /* Brand Teal */
+  --nh-teal-600: hsl(174, 83%, 53%);
+  --nh-teal-700: hsl(174, 83%, 43%);
+  --nh-teal-800: hsl(174, 83%, 33%);
+  --nh-teal-900: hsl(174, 83%, 23%);
+  --nh-teal-950: hsl(174, 83%, 13%);
+  
+  /* Neutral Scale - Grays */
+  --nh-gray-50: hsl(220, 14%, 98%);
+  --nh-gray-100: hsl(220, 14%, 96%);
+  --nh-gray-200: hsl(220, 13%, 91%);
+  --nh-gray-300: hsl(216, 12%, 84%);
+  --nh-gray-400: hsl(218, 11%, 65%);
+  --nh-gray-500: hsl(220, 9%, 46%);
+  --nh-gray-600: hsl(215, 14%, 34%);
+  --nh-gray-700: hsl(217, 19%, 27%);
+  --nh-gray-800: hsl(215, 28%, 17%);
+  --nh-gray-900: hsl(221, 39%, 11%);
+  --nh-gray-950: hsl(224, 71%, 4%);
+  
+  /* Semantic Colors */
+  --nh-success-light: hsl(142, 71%, 45%);
+  --nh-success: hsl(142, 71%, 38%);
+  --nh-success-dark: hsl(142, 71%, 28%);
+  
+  --nh-warning-light: hsl(38, 92%, 55%);
+  --nh-warning: hsl(38, 92%, 48%);
+  --nh-warning-dark: hsl(38, 92%, 38%);
+  
+  --nh-error-light: hsl(0, 72%, 55%);
+  --nh-error: hsl(0, 72%, 48%);
+  --nh-error-dark: hsl(0, 72%, 38%);
+  
+  --nh-info-light: var(--nh-blue-400);
+  --nh-info: var(--nh-blue-500);
+  --nh-info-dark: var(--nh-blue-600);
+  
+  /* Accent Colors - Complementary */
+  --nh-accent-orange: hsl(25, 95%, 53%);
+  --nh-accent-pink: hsl(330, 85%, 62%);
+  --nh-accent-indigo: hsl(243, 75%, 59%);
+  --nh-accent-cyan: hsl(188, 94%, 42%);
+  
+  /* RGB Values for Alpha Transparency */
+  --nh-blue-rgb: 61, 126, 235;
+  --nh-purple-rgb: 167, 85, 230;
+  --nh-teal-rgb: 94, 234, 231;
+  --nh-gray-rgb: 107, 114, 128;
+  
+  /* Gradients */
+  --nh-gradient-primary: linear-gradient(135deg, var(--nh-blue-500) 0%, var(--nh-purple-500) 100%);
+  --nh-gradient-secondary: linear-gradient(135deg, var(--nh-purple-500) 0%, var(--nh-teal-500) 100%);
+  --nh-gradient-tertiary: linear-gradient(135deg, var(--nh-teal-500) 0%, var(--nh-blue-500) 100%);
+  --nh-gradient-vibrant: linear-gradient(135deg, var(--nh-blue-500) 0%, var(--nh-purple-500) 50%, var(--nh-teal-500) 100%);
+  --nh-gradient-subtle: linear-gradient(135deg, var(--nh-blue-100) 0%, var(--nh-purple-100) 100%);
+  --nh-gradient-dark: linear-gradient(135deg, var(--nh-blue-800) 0%, var(--nh-purple-800) 100%);
+  
+  /* Radial Gradients */
+  --nh-gradient-radial-primary: radial-gradient(circle at 30% 30%, var(--nh-blue-500), var(--nh-purple-600));
+  --nh-gradient-radial-glow: radial-gradient(circle at 50% 50%, rgba(var(--nh-blue-rgb), 0.4), transparent 70%);
+  
+  /* Mesh Gradients */
+  --nh-gradient-mesh: 
+    radial-gradient(at 0% 0%, var(--nh-blue-400) 0, transparent 50%),
+    radial-gradient(at 50% 50%, var(--nh-purple-400) 0, transparent 50%),
+    radial-gradient(at 100% 100%, var(--nh-teal-400) 0, transparent 50%);
+}
+
+/* Light Theme (Default) */
+[data-theme="light"],
+:root {
+  /* Background & Surface Colors */
+  --nh-bg-primary: var(--nh-gray-50);
+  --nh-bg-secondary: white;
+  --nh-bg-tertiary: var(--nh-gray-100);
+  --nh-surface-primary: white;
+  --nh-surface-secondary: var(--nh-gray-50);
+  --nh-surface-tertiary: var(--nh-gray-100);
+  
+  /* Text Colors */
+  --nh-text-primary: var(--nh-gray-900);
+  --nh-text-secondary: var(--nh-gray-700);
+  --nh-text-tertiary: var(--nh-gray-600);
+  --nh-text-disabled: var(--nh-gray-400);
+  --nh-text-inverse: white;
+  
+  /* Border Colors */
+  --nh-border-primary: var(--nh-gray-200);
+  --nh-border-secondary: var(--nh-gray-300);
+  --nh-border-focus: var(--nh-blue-500);
+  
+  /* Interactive States */
+  --nh-hover: rgba(var(--nh-blue-rgb), 0.08);
+  --nh-active: rgba(var(--nh-blue-rgb), 0.12);
+  --nh-selected: rgba(var(--nh-blue-rgb), 0.16);
+  
+  /* Shadows */
+  --nh-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --nh-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --nh-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --nh-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  /* Background & Surface Colors */
+  --nh-bg-primary: var(--nh-gray-950);
+  --nh-bg-secondary: var(--nh-gray-900);
+  --nh-bg-tertiary: var(--nh-gray-800);
+  --nh-surface-primary: var(--nh-gray-900);
+  --nh-surface-secondary: var(--nh-gray-800);
+  --nh-surface-tertiary: var(--nh-gray-700);
+  
+  /* Text Colors */
+  --nh-text-primary: var(--nh-gray-50);
+  --nh-text-secondary: var(--nh-gray-200);
+  --nh-text-tertiary: var(--nh-gray-400);
+  --nh-text-disabled: var(--nh-gray-600);
+  --nh-text-inverse: var(--nh-gray-900);
+  
+  /* Border Colors */
+  --nh-border-primary: var(--nh-gray-800);
+  --nh-border-secondary: var(--nh-gray-700);
+  --nh-border-focus: var(--nh-blue-400);
+  
+  /* Interactive States */
+  --nh-hover: rgba(var(--nh-blue-rgb), 0.16);
+  --nh-active: rgba(var(--nh-blue-rgb), 0.24);
+  --nh-selected: rgba(var(--nh-blue-rgb), 0.32);
+  
+  /* Shadows */
+  --nh-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --nh-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --nh-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --nh-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  
+  /* Adjust semantic colors for dark mode */
+  --nh-success: hsl(142, 71%, 45%);
+  --nh-warning: hsl(38, 92%, 55%);
+  --nh-error: hsl(0, 72%, 55%);
+  --nh-info: var(--nh-blue-400);
+}
+
+/* Utility Classes */
+.nh-gradient-text {
+  background: var(--nh-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nh-gradient-border {
+  position: relative;
+  background: var(--nh-surface-primary);
+  border-radius: 0.5rem;
+}
+
+.nh-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--nh-gradient-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Focus Styles for Accessibility */
+.nh-focus-visible:focus-visible {
+  outline: 2px solid var(--nh-blue-500);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --nh-text-primary: black;
+    --nh-bg-primary: white;
+    --nh-border-primary: black;
+  }
+  
+  [data-theme="dark"] {
+    --nh-text-primary: white;
+    --nh-bg-primary: black;
+    --nh-border-primary: white;
+  }
+}

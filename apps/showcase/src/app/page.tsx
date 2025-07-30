@@ -1,334 +1,346 @@
-import Link from "next/link"
+"use client";
+
 import { 
-  Button,
+  Button, 
   Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle,
+  CardBody, 
+  CardFooter,
+  CardHeader,
+  Chip,
+  Divider,
+  Link,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Tab,
+  Tabs,
+  Avatar,
   Badge,
-  Tabs, 
-  TabsContent, 
-  TabsList, 
-  TabsTrigger 
-} from "@nh-ui/ui"
-import { ThemeToggle } from "@/components/theme-toggle"
+  Progress,
+  Snippet,
+  Code,
+  Spacer,
+} from "@heroui/react";
 import { 
-  Palette, 
-  Type, 
-  Layout, 
-  Zap, 
-  Shield, 
-  Sparkles 
-} from "lucide-react"
+  MoonIcon, 
+  SunIcon,
+  SparklesIcon,
+  SwatchIcon,
+  CubeIcon,
+  CodeBracketIcon,
+  RocketLaunchIcon,
+  CommandLineIcon,
+} from "@heroicons/react/24/outline";
+import { useTheme } from "next-themes";
+import { useState } from "react";
 
 export default function ShowcasePage() {
+  const { theme, setTheme } = useTheme();
+  const [selected, setSelected] = useState("colors");
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center">
-          <div className="flex items-center space-x-2">
-            <Sparkles className="h-6 w-6 text-nh-blue" />
-            <span className="font-bold text-xl">NH-UI</span>
-            <Badge variant="secondary" className="ml-2">v0.1.0</Badge>
-          </div>
-          <div className="flex flex-1 items-center justify-end space-x-4">
-            <nav className="flex items-center space-x-6">
-              <Link href="#colors" className="text-sm font-medium hover:text-primary">
-                Colors
-              </Link>
-              <Link href="#typography" className="text-sm font-medium hover:text-primary">
-                Typography
-              </Link>
-              <Link href="#components" className="text-sm font-medium hover:text-primary">
-                Components
-              </Link>
-              <Link href="#patterns" className="text-sm font-medium hover:text-primary">
-                Patterns
-              </Link>
-            </nav>
-            <ThemeToggle />
-          </div>
-        </div>
-      </header>
+      {/* Navigation */}
+      <Navbar isBordered>
+        <NavbarBrand>
+          <SparklesIcon className="h-6 w-6 text-primary mr-2" />
+          <p className="font-bold text-inherit">NH-UI</p>
+          <Chip size="sm" variant="flat" color="secondary" className="ml-2">
+            v2.0
+          </Chip>
+        </NavbarBrand>
+        <NavbarContent justify="end">
+          <NavbarItem>
+            <Button
+              isIconOnly
+              variant="light"
+              onPress={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? (
+                <SunIcon className="h-5 w-5" />
+              ) : (
+                <MoonIcon className="h-5 w-5" />
+              )}
+            </Button>
+          </NavbarItem>
+        </NavbarContent>
+      </Navbar>
 
       {/* Hero Section */}
-      <section className="container px-4 py-16 md:px-6 md:py-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Noise Heroes
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--nh-blue))] to-[hsl(var(--nh-purple))]">
-              Design System
-            </span>
-          </h1>
-          <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-            A beautiful, accessible, and customizable design system for building amazing music and creative applications.
-          </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button size="lg" className="gap-2">
-              <Layout className="h-4 w-4" />
-              View Components
-            </Button>
-            <Button size="lg" variant="outline" className="gap-2">
-              <Zap className="h-4 w-4" />
-              Get Started
-            </Button>
-          </div>
+      <section className="container mx-auto px-6 py-16 text-center">
+        <div className="flex justify-center mb-6">
+          <Badge content="NEW" color="success" placement="top-right" shape="circle">
+            <Avatar
+              radius="full"
+              size="lg"
+              src="https://i.pravatar.cc/150?u=a04258114e29026702d"
+              className="w-20 h-20"
+            />
+          </Badge>
         </div>
-      </section>
-
-      {/* Features */}
-      <section className="container px-4 py-16 md:px-6">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Palette className="h-5 w-5" />
-                Beautiful Design
-              </CardTitle>
-              <CardDescription>
-                Carefully crafted with attention to detail and aesthetics
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Our design system features a modern color palette, smooth animations, and consistent styling across all components.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Shield className="h-5 w-5" />
-                Accessible
-              </CardTitle>
-              <CardDescription>
-                Built with accessibility in mind from the ground up
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                All components follow WCAG guidelines, support keyboard navigation, and work seamlessly with screen readers.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Type className="h-5 w-5" />
-                Type Safe
-              </CardTitle>
-              <CardDescription>
-                Full TypeScript support for confident development
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Every component is fully typed, providing excellent IDE support and catching errors before runtime.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Color Palette Section */}
-      <section id="colors" className="container px-4 py-16 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tight">Color Palette</h2>
-        <p className="mt-2 text-muted-foreground">
-          The Noise Heroes color system is designed to be vibrant yet accessible
+        
+        <h1 className="text-5xl font-bold mb-4">
+          Noise Heroes
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+            {" "}Design System
+          </span>
+        </h1>
+        
+        <p className="text-xl text-default-600 mb-8 max-w-2xl mx-auto">
+          A modern, accessible design system for building beautiful music and creative applications
         </p>
         
-        <div className="mt-8 grid gap-4">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <Card className="overflow-hidden">
-              <div className="h-32 bg-[hsl(var(--nh-blue))]" />
-              <CardHeader>
-                <CardTitle>NH Blue</CardTitle>
-                <CardDescription>Primary brand color</CardDescription>
-              </CardHeader>
-            </Card>
-            
-            <Card className="overflow-hidden">
-              <div className="h-32 bg-[hsl(var(--nh-purple))]" />
-              <CardHeader>
-                <CardTitle>NH Purple</CardTitle>
-                <CardDescription>Secondary brand color</CardDescription>
-              </CardHeader>
-            </Card>
-            
-            <Card className="overflow-hidden">
-              <div className="h-32 bg-[hsl(var(--nh-teal))]" />
-              <CardHeader>
-                <CardTitle>NH Teal</CardTitle>
-                <CardDescription>Accent color</CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
+        <div className="flex gap-4 justify-center">
+          <Button color="primary" size="lg" startContent={<RocketLaunchIcon className="h-5 w-5" />}>
+            Get Started
+          </Button>
+          <Button variant="bordered" size="lg" startContent={<CodeBracketIcon className="h-5 w-5" />}>
+            View Components
+          </Button>
         </div>
       </section>
 
-      {/* Typography Section */}
-      <section id="typography" className="container px-4 py-16 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tight">Typography</h2>
-        <p className="mt-2 text-muted-foreground">
-          Clean, readable typography that scales beautifully
-        </p>
-        
-        <div className="mt-8 space-y-8">
-          <div>
-            <h1 className="text-4xl font-bold">Heading 1</h1>
-            <p className="text-muted-foreground">font-bold text-4xl</p>
-          </div>
-          <div>
-            <h2 className="text-3xl font-semibold">Heading 2</h2>
-            <p className="text-muted-foreground">font-semibold text-3xl</p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold">Heading 3</h3>
-            <p className="text-muted-foreground">font-semibold text-2xl</p>
-          </div>
-          <div>
-            <p className="text-base">Body text - This is how regular paragraph text appears in the system.</p>
-            <p className="text-muted-foreground">text-base</p>
-          </div>
-          <div>
-            <p className="text-sm text-muted-foreground">Small text - Used for captions and secondary information.</p>
-            <p className="text-muted-foreground">text-sm text-muted-foreground</p>
-          </div>
-        </div>
+      {/* Progress Demo */}
+      <section className="container mx-auto px-6 py-8">
+        <Card className="max-w-2xl mx-auto">
+          <CardBody>
+            <p className="text-small text-default-500 mb-2">Loading awesomeness...</p>
+            <Progress value={70} className="mb-4" color="primary" />
+            <div className="flex gap-2">
+              <Chip color="success" variant="flat" size="sm">Active</Chip>
+              <Chip color="warning" variant="flat" size="sm">In Progress</Chip>
+              <Chip color="danger" variant="flat" size="sm">Critical</Chip>
+            </div>
+          </CardBody>
+        </Card>
       </section>
 
-      {/* Components Preview */}
-      <section id="components" className="container px-4 py-16 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tight">Components</h2>
-        <p className="mt-2 text-muted-foreground">
-          A preview of our component library
-        </p>
-        
-        <Tabs defaultValue="buttons" className="mt-8">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="buttons">Buttons</TabsTrigger>
-            <TabsTrigger value="cards">Cards</TabsTrigger>
-            <TabsTrigger value="forms">Forms</TabsTrigger>
-            <TabsTrigger value="feedback">Feedback</TabsTrigger>
-          </TabsList>
+      {/* Component Showcase Tabs */}
+      <section className="container mx-auto px-6 py-16">
+        <Tabs 
+          aria-label="Component showcase" 
+          selectedKey={selected}
+          onSelectionChange={(key) => setSelected(key as string)}
+          color="primary"
+          variant="underlined"
+          classNames={{
+            tabList: "gap-6 w-full relative rounded-none p-0 border-b border-divider",
+            cursor: "w-full bg-primary",
+            tab: "max-w-fit px-0 h-12",
+          }}
+        >
+          <Tab
+            key="colors"
+            title={
+              <div className="flex items-center space-x-2">
+                <SwatchIcon className="h-5 w-5" />
+                <span>Colors</span>
+              </div>
+            }
+          >
+            <Card className="mt-6">
+              <CardHeader>
+                <h3 className="text-xl font-semibold">Color Palette</h3>
+              </CardHeader>
+              <CardBody>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <div className="h-20 bg-primary rounded-lg"></div>
+                    <p className="text-sm font-medium">Primary</p>
+                    <Code size="sm">#3B82F6</Code>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-20 bg-secondary rounded-lg"></div>
+                    <p className="text-sm font-medium">Secondary</p>
+                    <Code size="sm">#A855F7</Code>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-20 bg-success rounded-lg"></div>
+                    <p className="text-sm font-medium">Success</p>
+                    <Code size="sm">#14B8A6</Code>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+          </Tab>
           
-          <TabsContent value="buttons" className="mt-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Button Variants</CardTitle>
-                <CardDescription>
-                  Different button styles for various use cases
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-4">
-                <Button>Default</Button>
-                <Button variant="secondary">Secondary</Button>
-                <Button variant="destructive">Destructive</Button>
-                <Button variant="outline">Outline</Button>
-                <Button variant="ghost">Ghost</Button>
-                <Button variant="link">Link</Button>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="cards" className="mt-6">
-            <div className="grid gap-4 md:grid-cols-2">
+          <Tab
+            key="components"
+            title={
+              <div className="flex items-center space-x-2">
+                <CubeIcon className="h-5 w-5" />
+                <span>Components</span>
+              </div>
+            }
+          >
+            <div className="grid gap-6 mt-6 md:grid-cols-2">
               <Card>
                 <CardHeader>
-                  <CardTitle>Simple Card</CardTitle>
-                  <CardDescription>A basic card component</CardDescription>
+                  <h3 className="text-lg font-semibold">Buttons</h3>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Cards are used to group related content and actions.
-                  </p>
-                </CardContent>
+                <CardBody className="gap-4">
+                  <div className="flex flex-wrap gap-3">
+                    <Button color="primary">Primary</Button>
+                    <Button color="secondary">Secondary</Button>
+                    <Button color="success">Success</Button>
+                    <Button color="warning">Warning</Button>
+                    <Button color="danger">Danger</Button>
+                  </div>
+                  <Divider />
+                  <div className="flex flex-wrap gap-3">
+                    <Button variant="solid">Solid</Button>
+                    <Button variant="bordered">Bordered</Button>
+                    <Button variant="light">Light</Button>
+                    <Button variant="flat">Flat</Button>
+                    <Button variant="faded">Faded</Button>
+                    <Button variant="shadow">Shadow</Button>
+                    <Button variant="ghost">Ghost</Button>
+                  </div>
+                </CardBody>
               </Card>
-              
+
               <Card>
                 <CardHeader>
-                  <CardTitle>Interactive Card</CardTitle>
-                  <CardDescription>With hover effects</CardDescription>
+                  <h3 className="text-lg font-semibold">Chips & Badges</h3>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    This card has interactive hover states.
-                  </p>
-                  <Button className="mt-4" size="sm">
-                    Learn More
-                  </Button>
-                </CardContent>
+                <CardBody className="gap-4">
+                  <div className="flex flex-wrap gap-2">
+                    <Chip>Default</Chip>
+                    <Chip color="primary">Primary</Chip>
+                    <Chip color="secondary">Secondary</Chip>
+                    <Chip color="success">Success</Chip>
+                    <Chip color="warning">Warning</Chip>
+                    <Chip color="danger">Danger</Chip>
+                  </div>
+                  <Divider />
+                  <div className="flex gap-4">
+                    <Badge content="5" color="primary">
+                      <Avatar radius="md" src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+                    </Badge>
+                    <Badge content="99+" color="danger">
+                      <Avatar radius="md" src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+                    </Badge>
+                  </div>
+                </CardBody>
               </Card>
             </div>
-          </TabsContent>
+          </Tab>
           
-          <TabsContent value="forms" className="mt-6">
-            <Card>
+          <Tab
+            key="code"
+            title={
+              <div className="flex items-center space-x-2">
+                <CommandLineIcon className="h-5 w-5" />
+                <span>Code</span>
+              </div>
+            }
+          >
+            <Card className="mt-6">
               <CardHeader>
-                <CardTitle>Form Elements</CardTitle>
-                <CardDescription>
-                  Coming soon - Input fields, selects, and more
-                </CardDescription>
+                <h3 className="text-xl font-semibold">Quick Start</h3>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Form components are being developed and will be available soon.
-                </p>
-              </CardContent>
+              <CardBody className="gap-4">
+                <p className="text-default-600">Install HeroUI in your project:</p>
+                <Snippet symbol="$" variant="bordered">
+                  npm install @heroui/react @heroicons/react framer-motion
+                </Snippet>
+                
+                <Spacer y={2} />
+                
+                <p className="text-default-600">Import and use components:</p>
+                <Snippet 
+                  symbol="" 
+                  variant="bordered"
+                  classNames={{
+                    pre: "font-mono text-sm"
+                  }}
+                >
+                  {`import { Button } from "@heroui/react";
+
+export default function App() {
+  return (
+    <Button color="primary">
+      Click me
+    </Button>
+  );
+}`}
+                </Snippet>
+              </CardBody>
             </Card>
-          </TabsContent>
-          
-          <TabsContent value="feedback" className="mt-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Feedback Components</CardTitle>
-                <CardDescription>
-                  Alerts, toasts, and notifications
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Badge>Default</Badge>
-                <Badge variant="secondary">Secondary</Badge>
-                <Badge variant="destructive">Destructive</Badge>
-                <Badge variant="outline">Outline</Badge>
-              </CardContent>
-            </Card>
-          </TabsContent>
+          </Tab>
         </Tabs>
+      </section>
+
+      {/* Features Grid */}
+      <section className="container mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold text-center mb-12">Why Choose NH-UI?</h2>
+        <div className="grid gap-6 md:grid-cols-3">
+          <Card className="p-6">
+            <CardBody>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-primary/20 rounded-lg">
+                  <SparklesIcon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold">Modern Design</h3>
+              </div>
+              <p className="text-default-600">
+                Beautiful components built with the latest design trends and best practices
+              </p>
+            </CardBody>
+          </Card>
+
+          <Card className="p-6">
+            <CardBody>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-secondary/20 rounded-lg">
+                  <CodeBracketIcon className="h-6 w-6 text-secondary" />
+                </div>
+                <h3 className="text-lg font-semibold">Developer Friendly</h3>
+              </div>
+              <p className="text-default-600">
+                Type-safe components with excellent DX and comprehensive documentation
+              </p>
+            </CardBody>
+          </Card>
+
+          <Card className="p-6">
+            <CardBody>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-success/20 rounded-lg">
+                  <RocketLaunchIcon className="h-6 w-6 text-success" />
+                </div>
+                <h3 className="text-lg font-semibold">Production Ready</h3>
+              </div>
+              <p className="text-default-600">
+                Battle-tested components used by thousands of developers worldwide
+              </p>
+            </CardBody>
+          </Card>
+        </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t">
-        <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-          <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-            <p className="text-center text-sm leading-loose md:text-left">
-              Built by{" "}
-              <a
-                href="https://noiseheroes.com"
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium underline underline-offset-4"
-              >
+        <div className="container mx-auto px-6 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-default-600 text-sm">
+              Built with ❤️ by{" "}
+              <Link href="https://noiseheroes.com" isExternal size="sm">
                 Noise Heroes
-              </a>
-              . The source code is available on{" "}
-              <a
-                href="https://github.com/noise-heroes/nh-ui"
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium underline underline-offset-4"
-              >
-                GitHub
-              </a>
-              .
+              </Link>
             </p>
+            <div className="flex gap-4">
+              <Link href="https://github.com/noise-heroes/nh-ui" isExternal size="sm">
+                GitHub
+              </Link>
+              <Link href="/docs" size="sm">
+                Documentation
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
