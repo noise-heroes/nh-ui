@@ -1,0 +1,5 @@
+{
+  "installCommand": "cd ../.. && pnpm install",
+  "buildCommand": "cd ../.. && pnpm run build:showcase",
+  "devCommand": "pnpm dev"
+}
