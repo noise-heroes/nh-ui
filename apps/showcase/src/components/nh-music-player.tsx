@@ -2,7 +2,7 @@
 
 import { Card, CardBody, Progress, Avatar, Chip } from "@heroui/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { animations, transitions } from "@/styles/animations";
+// import { animations, transitions } from "@/styles/animations";
 import { NHButton } from "./nh-button";
 import { 
   PlayIcon, 
@@ -97,7 +97,7 @@ export function NHMusicPlayer({
             className="flex justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transitions.standard, delay: 0.3 }}
+            transition={{ duration: 0.3, ease: "easeInOut", delay: 0.3 }}
           >
             <NHButton 
               isIconOnly 

@@ -2,7 +2,7 @@
 
 import { Button, ButtonProps } from "@heroui/react";
 import { motion } from "framer-motion";
-import { animations, transitions } from "@/styles/animations";
+// import { animations, transitions } from "@/styles/animations";
 import { ReactNode } from "react";
 
 interface NHButtonProps extends ButtonProps {
@@ -35,7 +35,7 @@ export function NHButton({
     <MotionButton
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      transition={transitions.quick}
+      transition={{ duration: 0.2, ease: "easeOut" }}
       className={`${className} ${glow ? 'nh-glow' : ''}`}
       {...props}
     >
