@@ -223,7 +223,7 @@ export default function ComponentsPage() {
                 startContent={<QueueListIcon className="h-4 w-4" />}
               >
                 {genres.map((genre) => (
-                  <SelectItem key={genre.value} value={genre.value}>
+                  <SelectItem key={genre.value}>
                     {genre.label}
                   </SelectItem>
                 ))}
