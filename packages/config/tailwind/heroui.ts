@@ -24,12 +24,33 @@ const sharedConfig: Config = {
   plugins: [heroui({
     themes: {
       light: {
+        extend: "light",
         colors: {
           primary: {
+            50: "#FFF5F0",
+            100: "#FFE5D9",
+            200: "#FFC7AD",
+            300: "#FFA380",
+            400: "#FF7F54",
+            500: "#FF5500",
+            600: "#E64D00",
+            700: "#CC4400",
+            800: "#B33C00",
+            900: "#803300",
             DEFAULT: "#FF5500",
             foreground: "#FFFFFF",
           },
           secondary: {
+            50: "#F0FFFC",
+            100: "#D9FFF7",
+            200: "#B3FFEF",
+            300: "#80FFE5",
+            400: "#4DFFDB",
+            500: "#00D9B5",
+            600: "#00C3A3",
+            700: "#00AD91",
+            800: "#009980",
+            900: "#00806B",
             DEFAULT: "#00D9B5",
             foreground: "#000000",
           },
@@ -48,10 +69,9 @@ const sharedConfig: Config = {
         },
       },
       dark: {
+        extend: "dark",
         colors: {
           primary: {
-            DEFAULT: "#FF5500",
-            foreground: "#FFFFFF",
             50: "#4D1F00",
             100: "#803300",
             200: "#B33C00",
@@ -62,10 +82,10 @@ const sharedConfig: Config = {
             700: "#FFA380",
             800: "#FFC7AD",
             900: "#FFE5D9",
+            DEFAULT: "#FF5500",
+            foreground: "#FFFFFF",
           },
           secondary: {
-            DEFAULT: "#00D9B5",
-            foreground: "#000000",
             50: "#004D40",
             100: "#00806B",
             200: "#009980",
@@ -76,6 +96,8 @@ const sharedConfig: Config = {
             700: "#80FFE5",
             800: "#B3FFEF",
             900: "#D9FFF7",
+            DEFAULT: "#00D9B5",
+            foreground: "#000000",
           },
           success: {
             DEFAULT: "#00D9B5",
@@ -91,9 +113,6 @@ const sharedConfig: Config = {
           },
           background: {
             DEFAULT: "#000000",
-            100: "#0A0A0A",
-            200: "#171717",
-            300: "#262626",
           },
           content1: "#0A0A0A",
           content2: "#171717",
