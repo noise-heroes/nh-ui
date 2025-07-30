@@ -2,5 +2,6 @@
   "buildCommand": "pnpm turbo build --filter=@nh-ui/showcase",
   "outputDirectory": "apps/showcase/.next",
   "installCommand": "pnpm install",
-  "framework": "nextjs"
+  "framework": null,
+  "devCommand": "pnpm turbo dev --filter=@nh-ui/showcase"
 }
