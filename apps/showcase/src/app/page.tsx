@@ -122,6 +122,32 @@ export default function ShowcasePage() {
           </Tab>
           
           <Tab
+            key="minimal"
+            title={
+              <div className="flex items-center space-x-2">
+                <div className="w-5 h-5 rounded-full border-2 border-current"></div>
+                <span>Minimal Design</span>
+              </div>
+            }
+          >
+            <Card className="mt-6">
+              <CardHeader>
+                <h3 className="text-xl font-semibold">Minimal Design System</h3>
+              </CardHeader>
+              <CardBody>
+                <p className="text-default-600 mb-4">
+                  Circle-first, icon-focused design with pill-shaped buttons and minimal text.
+                </p>
+                <Link href="/minimal" color="primary">
+                  <Button color="primary" variant="flat" className="rounded-full">
+                    Explore Minimal Design
+                  </Button>
+                </Link>
+              </CardBody>
+            </Card>
+          </Tab>
+          
+          <Tab
             key="colors"
             title={
               <div className="flex items-center space-x-2">

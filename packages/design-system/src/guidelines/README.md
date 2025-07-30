@@ -1,18 +1,20 @@
 # Noise Heroes Design System
 
-## Design Philosophy: Flat Meets Glass
+## Design Philosophy: Minimal, Circular, Icon-First
 
-The Noise Heroes Design System combines the clarity of flat design with the depth and sophistication of glassmorphism. Our approach creates a unique visual language that is both modern and timeless.
+The Noise Heroes Design System embraces minimalism through circular forms, pill-shaped elements, and icon-first communication. We combine this with our signature glass effects for a unique, modern aesthetic.
 
 ### Core Principles
 
-1. **Glass Containers, Flat Content**: All containers (cards, sections, modals) use frosted glass effects, while content within remains flat and clear.
+1. **Circle & Pills**: Extensive use of circular elements and pill-shaped buttons for a soft, approachable feel.
 
-2. **Depth Through Blur**: Instead of traditional shadows, we use backdrop blur to create depth and hierarchy.
+2. **Icons Over Text**: Minimize text wherever possible, using clear iconography for universal understanding.
 
-3. **Vibrant on Subtle**: Bold, flat elements stand out against subtle glass backgrounds.
+3. **Glass Containers, Flat Content**: All containers use frosted glass effects, while content within remains flat and clear.
 
-4. **Motion with Purpose**: Smooth transitions enhance the liquid glass experience without overwhelming.
+4. **Playful Interactions**: Subtle rotations and scaling on hover create delightful micro-interactions.
+
+5. **Minimal & Slim**: Clean lines, generous whitespace, and slim profiles throughout.
 
 ## Visual Language
 
