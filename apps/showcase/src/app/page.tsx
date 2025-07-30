@@ -3,16 +3,11 @@
 import { 
   Button, 
   Card, 
-  CardBody, 
-  CardFooter,
+  CardBody,
   CardHeader,
   Chip,
   Divider,
   Link,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
   Tab,
   Tabs,
   Avatar,
@@ -23,8 +18,6 @@ import {
   Spacer,
 } from "@heroui/react";
 import { 
-  MoonIcon, 
-  SunIcon,
   SparklesIcon,
   SwatchIcon,
   CubeIcon,
@@ -32,61 +25,13 @@ import {
   RocketLaunchIcon,
   CommandLineIcon,
 } from "@heroicons/react/24/outline";
-import { useTheme } from "next-themes";
 import { useState } from "react";
 
 export default function ShowcasePage() {
-  const { theme, setTheme } = useTheme();
   const [selected, setSelected] = useState("colors");
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <Navbar isBordered>
-        <NavbarBrand>
-          <img 
-            src="/NH-logo-RGB-hr.svg" 
-            alt="Noise Heroes" 
-            className="h-8 w-auto"
-          />
-          <Chip size="sm" variant="flat" color="secondary" className="ml-3">
-            UI Kit v2.0
-          </Chip>
-        </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          <NavbarItem>
-            <Link color="foreground" href="/typography">
-              Typography
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link color="foreground" href="/colors">
-              Colors
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link color="foreground" href="/components">
-              Components
-            </Link>
-          </NavbarItem>
-        </NavbarContent>
-        <NavbarContent justify="end">
-          <NavbarItem>
-            <Button
-              isIconOnly
-              variant="light"
-              onPress={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
-              {theme === "dark" ? (
-                <SunIcon className="h-5 w-5" />
-              ) : (
-                <MoonIcon className="h-5 w-5" />
-              )}
-            </Button>
-          </NavbarItem>
-        </NavbarContent>
-      </Navbar>
-
+    <>
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-16 text-center">
         <div className="flex justify-center mb-6">
@@ -361,6 +306,6 @@ export default function App() {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
