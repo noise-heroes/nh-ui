@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import {heroui} from "@heroui/react";
+import { colors } from "./src/styles/colors";
 
 const config: Config = {
   content: [
@@ -11,9 +12,21 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'display': ['ABC Diatype Compressed', 'system-ui', 'sans-serif'],
-        'body': ['Neue Haas Grotesk Display', 'system-ui', 'sans-serif'],
-        'mono': ['SF Mono', 'Roboto Mono', 'monospace'],
+        'sans': ['Neue Haas Grotesk Display', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        'display': ['Neue Haas Grotesk Display', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'], // Same as sans
+        'brand': ['ABC Diatype Compressed', 'system-ui', 'sans-serif'], // Only for special branding moments
+        'mono': ['SF Mono', 'Roboto Mono', 'Courier New', 'monospace'],
+      },
+      colors: {
+        ...colors.neutral,
+      },
+      backgroundImage: {
+        ...colors.gradients,
+      },
+      boxShadow: {
+        ...colors.shadows,
+        ...colors.effects.glow,
+        ...colors.effects.neon,
       },
     },
   },

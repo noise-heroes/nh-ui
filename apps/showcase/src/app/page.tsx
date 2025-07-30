@@ -53,6 +53,23 @@ export default function ShowcasePage() {
             UI Kit v2.0
           </Chip>
         </NavbarBrand>
+        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+          <NavbarItem>
+            <Link color="foreground" href="/typography">
+              Typography
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link color="foreground" href="/colors">
+              Colors
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link color="foreground" href="/components">
+              Components
+            </Link>
+          </NavbarItem>
+        </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem>
             <Button
@@ -83,7 +100,7 @@ export default function ShowcasePage() {
           </Badge>
         </div>
         
-        <h1 className="text-7xl font-display font-bold mb-4 uppercase tracking-tight">
+        <h1 className="text-6xl font-bold mb-4">
           Noise Heroes
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
             {" "}UI Kit
