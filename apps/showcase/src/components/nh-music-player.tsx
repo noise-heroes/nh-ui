@@ -44,9 +44,9 @@ export function NHMusicPlayer({
   
   return (
     <motion.div
-      initial={animations.scaleIn.initial}
-      animate={animations.scaleIn.animate}
-      transition={transitions.smooth}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <Card className="max-w-md bg-gradient-to-br from-purple-500/10 to-blue-500/10 border-0">
         <CardBody className="gap-4">
@@ -55,11 +55,11 @@ export function NHMusicPlayer({
             className="flex gap-4"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={transitions.standard}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
-              transition={transitions.spring}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
             >
               <Avatar
                 radius="lg"
@@ -81,7 +81,7 @@ export function NHMusicPlayer({
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ ...transitions.standard, delay: 0.2 }}
+            transition={{ duration: 0.3, ease: "easeInOut", delay: 0.2 }}
           >
             <Progress 
               value={progress} 
@@ -109,7 +109,7 @@ export function NHMusicPlayer({
             </NHButton>
             
             <motion.div
-              animate={isPlaying ? animations.pulse.animate : {}}
+              animate={isPlaying ? { scale: [1, 1.05, 1] } : {}}
             >
               <NHButton 
                 isIconOnly 
@@ -125,7 +125,7 @@ export function NHMusicPlayer({
                       initial={{ scale: 0, rotate: -180 }}
                       animate={{ scale: 1, rotate: 0 }}
                       exit={{ scale: 0, rotate: 180 }}
-                      transition={transitions.quick}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                     >
                       <PauseIcon className="h-6 w-6" />
                     </motion.div>
@@ -135,7 +135,7 @@ export function NHMusicPlayer({
                       initial={{ scale: 0, rotate: -180 }}
                       animate={{ scale: 1, rotate: 0 }}
                       exit={{ scale: 0, rotate: 180 }}
-                      transition={transitions.quick}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                     >
                       <PlayIcon className="h-6 w-6" />
                     </motion.div>
@@ -159,7 +159,7 @@ export function NHMusicPlayer({
             className="flex justify-between items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ ...transitions.standard, delay: 0.4 }}
+            transition={{ duration: 0.3, ease: "easeInOut", delay: 0.4 }}
           >
             <NHButton
               isIconOnly
@@ -173,7 +173,7 @@ export function NHMusicPlayer({
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     exit={{ scale: 0 }}
-                    transition={transitions.spring}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   >
                     <HeartIconSolid className="h-5 w-5 text-danger" />
                   </motion.div>
@@ -183,7 +183,7 @@ export function NHMusicPlayer({
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     exit={{ scale: 0 }}
-                    transition={transitions.spring}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   >
                     <HeartIcon className="h-5 w-5" />
                   </motion.div>

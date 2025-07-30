@@ -5,7 +5,7 @@ const config: Config = {
   ...sharedConfig,
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    ...sharedConfig.content,
+    ...(sharedConfig.content as string[]),
   ],
 };
 

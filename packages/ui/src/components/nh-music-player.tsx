@@ -15,7 +15,7 @@ import {
 import { HeartIcon as HeartIconSolid } from "@heroicons/react/24/solid";
 import { useState } from "react";
 
-interface Track {
+export interface Track {
   title: string;
   artist: string;
   coverUrl: string;
@@ -173,7 +173,7 @@ export function NHMusicPlayer({
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     exit={{ scale: 0 }}
-                    transition={transitions.spring}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   >
                     <HeartIconSolid className="h-5 w-5 text-danger" />
                   </motion.div>
@@ -183,7 +183,7 @@ export function NHMusicPlayer({
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     exit={{ scale: 0 }}
-                    transition={transitions.spring}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   >
                     <HeartIcon className="h-5 w-5" />
                   </motion.div>

@@ -21,8 +21,6 @@ export function NHButton({
   className = "",
   ...props 
 }: NHButtonProps) {
-  const MotionButton = motion(Button);
-  
   if (!animated) {
     return (
       <Button className={className} {...props}>
@@ -32,14 +30,18 @@ export function NHButton({
   }
   
   return (
-    <MotionButton
+    <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className={`${className} ${glow ? 'nh-glow' : ''}`}
-      {...props}
+      className="inline-block"
     >
-      {children}
-    </MotionButton>
+      <Button
+        className={`${className} ${glow ? 'nh-glow' : ''}`}
+        {...props}
+      >
+        {children}
+      </Button>
+    </motion.div>
   );
 }
