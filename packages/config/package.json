@@ -9,6 +9,10 @@
     "tsconfig"
   ],
   "dependencies": {
+    "tailwindcss": "^3.4.13",
     "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20"
   }
 }

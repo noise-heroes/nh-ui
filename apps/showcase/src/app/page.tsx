@@ -1,14 +1,17 @@
 import Link from "next/link"
-import { Button } from "@nh-ui/ui/button"
 import { 
+  Button,
   Card, 
   CardContent, 
   CardDescription, 
   CardHeader, 
-  CardTitle 
-} from "@nh-ui/ui/card"
-import { Badge } from "@nh-ui/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@nh-ui/ui/tabs"
+  CardTitle,
+  Badge,
+  Tabs, 
+  TabsContent, 
+  TabsList, 
+  TabsTrigger 
+} from "@nh-ui/ui"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { 
   Palette, 
