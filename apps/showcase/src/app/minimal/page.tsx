@@ -1,12 +1,21 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import { 
   NHButton,
   NHIconButton,
-  NHNav,
-  NHMinimalCard,
-  NHGlassSection
+  NHNav
 } from "@nh-ui/ui";
+
+const NHMinimalCard = dynamic(
+  () => import("@nh-ui/ui").then(mod => ({ default: mod.NHMinimalCard })),
+  { ssr: false }
+);
+
+const NHGlassSection = dynamic(
+  () => import("@nh-ui/ui").then(mod => ({ default: mod.NHGlassSection })),
+  { ssr: false }
+);
 import {
   CardBody,
   Chip,
