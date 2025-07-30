@@ -27,6 +27,7 @@ export function SiteHeader() {
     { label: "Typography", href: "/typography" },
     { label: "Colors", href: "/colors" },
     { label: "Components", href: "/components" },
+    { label: "Animations", href: "/animations" },
   ];
 
   return (
