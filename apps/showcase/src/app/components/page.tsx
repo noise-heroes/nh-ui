@@ -324,7 +324,7 @@ export default function ComponentsPage() {
               <h3 className="text-lg font-semibold mb-4">Content Navigation</h3>
               <Tabs 
                 selectedKey={selectedTab}
-                onSelectionChange={setSelectedTab}
+                onSelectionChange={(key) => setSelectedTab(key as string)}
                 color="primary"
                 variant="underlined"
               >
