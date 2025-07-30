@@ -1,8 +1,67 @@
-@import './fonts.css';
+@import '../styles/fonts.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Override HeroUI/NextUI default colors with Noise Heroes colors */
+@layer base {
+  :root {
+    /* Primary - Orange */
+    --heroui-primary: 24 100% 50%; /* #FF5500 in HSL */
+    --heroui-primary-50: 24 100% 10%;
+    --heroui-primary-100: 24 100% 20%;
+    --heroui-primary-200: 24 100% 30%;
+    --heroui-primary-300: 24 100% 40%;
+    --heroui-primary-400: 24 100% 45%;
+    --heroui-primary-500: 24 100% 50%; /* #FF5500 */
+    --heroui-primary-600: 24 100% 66%;
+    --heroui-primary-700: 24 100% 75%;
+    --heroui-primary-800: 24 100% 85%;
+    --heroui-primary-900: 24 100% 93%;
+    --heroui-primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Teal */
+    --heroui-secondary: 167 100% 42%; /* #00D9B5 in HSL */
+    --heroui-secondary-50: 167 100% 10%;
+    --heroui-secondary-100: 167 100% 20%;
+    --heroui-secondary-200: 167 100% 30%;
+    --heroui-secondary-300: 167 100% 35%;
+    --heroui-secondary-400: 167 100% 38%;
+    --heroui-secondary-500: 167 100% 42%; /* #00D9B5 */
+    --heroui-secondary-600: 167 100% 60%;
+    --heroui-secondary-700: 167 100% 75%;
+    --heroui-secondary-800: 167 100% 85%;
+    --heroui-secondary-900: 167 100% 93%;
+    --heroui-secondary-foreground: 0 0% 0%;
+    
+    /* Success - Same as Secondary/Teal */
+    --heroui-success: 167 100% 42%;
+    --heroui-success-foreground: 0 0% 0%;
+    
+    /* Warning - Same as Primary/Orange */
+    --heroui-warning: 24 100% 50%;
+    --heroui-warning-foreground: 0 0% 100%;
+    
+    /* Danger - Bright Red */
+    --heroui-danger: 0 100% 60%;
+    --heroui-danger-foreground: 0 0% 100%;
+  }
+  
+  .dark {
+    /* Keep the same colors in dark mode */
+    --heroui-primary: 24 100% 50%;
+    --heroui-primary-foreground: 0 0% 100%;
+    --heroui-secondary: 167 100% 42%;
+    --heroui-secondary-foreground: 0 0% 0%;
+    --heroui-success: 167 100% 42%;
+    --heroui-success-foreground: 0 0% 0%;
+    --heroui-warning: 24 100% 66%;
+    --heroui-warning-foreground: 0 0% 0%;
+    --heroui-danger: 0 100% 70%;
+    --heroui-danger-foreground: 0 0% 100%;
+  }
+}
 
 /* Apply Noise Heroes fonts globally */
 :root {

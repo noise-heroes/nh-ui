@@ -91,13 +91,13 @@ export const transitions = {
   // Standard transitions for most interactions
   standard: {
     duration: 0.3,
-    ease: [0.4, 0, 0.2, 1], // Material Design easing
+    ease: "easeInOut", // Simplified for compatibility
   },
   
   // Smooth transitions for larger movements
   smooth: {
     duration: 0.5,
-    ease: [0.4, 0, 0.2, 1],
+    ease: "easeInOut",
   },
   
   // Spring animations for playful interactions
