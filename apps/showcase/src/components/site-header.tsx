@@ -16,6 +16,7 @@ import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { NHLogoFromFile } from "@nh-ui/ui";
 
 export function SiteHeader() {
   const { theme, setTheme } = useTheme();
@@ -44,11 +45,7 @@ export function SiteHeader() {
         />
         <NavbarBrand>
           <Link href="/" color="foreground">
-            <img 
-              src="/NH-logo-RGB-hr.svg" 
-              alt="Noise Heroes" 
-              className="h-8 w-auto"
-            />
+            <NHLogoFromFile className="h-8 w-auto" />
           </Link>
           <Chip size="sm" variant="flat" color="secondary" className="ml-3">
             UI Kit v2.0
