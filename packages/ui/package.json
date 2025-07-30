@@ -9,10 +9,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@heroui/react": "^2.4.24",
     "@heroicons/react": "^2.1.5",
+    "@heroui/react": "^2.4.24",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.3.21",
-    "next-themes": "^0.3.0"
+    "next-themes": "^0.3.0",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@nh-ui/config": "workspace:*",

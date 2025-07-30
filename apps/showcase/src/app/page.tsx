@@ -28,7 +28,7 @@ import {
 import { useState } from "react";
 
 export default function ShowcasePage() {
-  const [selected, setSelected] = useState("colors");
+  const [selected, setSelected] = useState("glass");
 
   return (
     <>
@@ -95,6 +95,32 @@ export default function ShowcasePage() {
             tab: "max-w-fit px-0 h-12",
           }}
         >
+          <Tab
+            key="glass"
+            title={
+              <div className="flex items-center space-x-2">
+                <SparklesIcon className="h-5 w-5" />
+                <span>Glass Design</span>
+              </div>
+            }
+          >
+            <Card className="mt-6">
+              <CardHeader>
+                <h3 className="text-xl font-semibold">Glass Design System</h3>
+              </CardHeader>
+              <CardBody>
+                <p className="text-default-600 mb-4">
+                  Our signature design system combining flat design with glassmorphism.
+                </p>
+                <Link href="/glass" color="primary">
+                  <Button color="primary" variant="flat" endContent={<SparklesIcon className="h-4 w-4" />}>
+                    Explore Glass Design
+                  </Button>
+                </Link>
+              </CardBody>
+            </Card>
+          </Tab>
+          
           <Tab
             key="colors"
             title={
