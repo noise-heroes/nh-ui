@@ -43,3 +43,20 @@ yarn-error.log*
 # IDE
 .vscode/
 .idea/
+# Deployment
+.env.local
+.env.production
+
+# Logs
+logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
