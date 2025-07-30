@@ -9,7 +9,13 @@ const config: Config = {
     "../../node_modules/.pnpm/@heroui+theme@*/node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'display': ['ABC Diatype Compressed', 'system-ui', 'sans-serif'],
+        'body': ['Neue Haas Grotesk Display', 'system-ui', 'sans-serif'],
+        'mono': ['SF Mono', 'Roboto Mono', 'monospace'],
+      },
+    },
   },
   darkMode: "class",
   plugins: [heroui({

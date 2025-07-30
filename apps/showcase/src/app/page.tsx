@@ -44,10 +44,13 @@ export default function ShowcasePage() {
       {/* Navigation */}
       <Navbar isBordered>
         <NavbarBrand>
-          <SparklesIcon className="h-6 w-6 text-primary mr-2" />
-          <p className="font-bold text-inherit">NH-UI</p>
-          <Chip size="sm" variant="flat" color="secondary" className="ml-2">
-            v2.0
+          <img 
+            src="/NH-logo-RGB-hr.svg" 
+            alt="Noise Heroes" 
+            className="h-8 w-auto"
+          />
+          <Chip size="sm" variant="flat" color="secondary" className="ml-3">
+            UI Kit v2.0
           </Chip>
         </NavbarBrand>
         <NavbarContent justify="end">
@@ -80,10 +83,10 @@ export default function ShowcasePage() {
           </Badge>
         </div>
         
-        <h1 className="text-5xl font-bold mb-4">
+        <h1 className="text-7xl font-display font-bold mb-4 uppercase tracking-tight">
           Noise Heroes
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-            {" "}Design System
+            {" "}UI Kit
           </span>
         </h1>
         
