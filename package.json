@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
+    "@heroui/theme": "^2.4.20",
     "prettier": "^3.2.5",
     "turbo": "^2.0.0",
     "typescript": "^5.5.0"
