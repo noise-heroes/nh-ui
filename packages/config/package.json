@@ -1,0 +1,14 @@
+{
+  "name": "@nh-ui/config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "eslint",
+    "tailwind",
+    "tsconfig"
+  ],
+  "dependencies": {
+    "tailwindcss-animate": "^1.0.7"
+  }
+}
