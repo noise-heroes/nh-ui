@@ -59,16 +59,14 @@ export function NHLogoFromFile({ className = "h-8 w-auto" }: NHLogoProps) {
   const currentTheme = resolvedTheme || theme;
   
   return (
-    <div className={className} style={{ position: 'relative', display: 'inline-block' }}>
-      <img 
-        src="/NH-logo-RGB-hr.svg" 
-        alt="Noise Heroes" 
-        className={className}
-        style={{
-          filter: currentTheme === 'dark' ? 'invert(1) brightness(2)' : 'none',
-          transition: 'filter 0.3s ease',
-        }}
-      />
-    </div>
+    <img 
+      src="/NH-logo-RGB-hr.svg" 
+      alt="Noise Heroes" 
+      className={className}
+      style={{
+        filter: currentTheme === 'dark' ? 'invert(1) brightness(2)' : 'none',
+        transition: 'filter 0.3s ease',
+      }}
+    />
   );
 }

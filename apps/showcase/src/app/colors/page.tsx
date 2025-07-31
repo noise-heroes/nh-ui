@@ -10,7 +10,7 @@ export default function ColorsPage() {
       <div className="min-h-screen p-8 max-w-7xl mx-auto relative z-10">
       <div className="mb-12">
         <h1 className="text-5xl font-bold mb-4">Official Color System</h1>
-        <p className="text-xl text-gray-600">
+        <p className="text-xl text-default-600">
           Noise Heroes official colors: Black, White, Orange (#FF5500), and Teal (#00D9B5)
         </p>
       </div>
@@ -26,25 +26,25 @@ export default function ColorsPage() {
               <div className="h-32 rounded-xl bg-black mb-4 shadow-lg border border-gray-200"></div>
               <h3 className="font-semibold mb-1">Black</h3>
               <code className="text-sm text-gray-600">#000000</code>
-              <p className="text-sm text-gray-500 mt-2">Pure black for maximum contrast</p>
+              <p className="text-sm text-default-500 mt-2">Pure black for maximum contrast</p>
             </div>
             <div>
               <div className="h-32 rounded-xl bg-white mb-4 shadow-lg border border-gray-200"></div>
               <h3 className="font-semibold mb-1">White</h3>
               <code className="text-sm text-gray-600">#FFFFFF</code>
-              <p className="text-sm text-gray-500 mt-2">Pure white for clean backgrounds</p>
+              <p className="text-sm text-default-500 mt-2">Pure white for clean backgrounds</p>
             </div>
             <div>
               <div className="h-32 rounded-xl bg-[#FF5500] mb-4 shadow-lg"></div>
               <h3 className="font-semibold mb-1">Orange</h3>
               <code className="text-sm text-gray-600">#FF5500</code>
-              <p className="text-sm text-gray-500 mt-2">Primary brand color for energy</p>
+              <p className="text-sm text-default-500 mt-2">Primary brand color for energy</p>
             </div>
             <div>
               <div className="h-32 rounded-xl bg-[#00D9B5] mb-4 shadow-lg"></div>
               <h3 className="font-semibold mb-1">Teal</h3>
               <code className="text-sm text-gray-600">#00D9B5</code>
-              <p className="text-sm text-gray-500 mt-2">Secondary color for balance</p>
+              <p className="text-sm text-default-500 mt-2">Secondary color for balance</p>
             </div>
           </div>
         </CardBody>
@@ -72,7 +72,7 @@ export default function ColorsPage() {
       </Card>
 
       {/* Extended Teal Palette */}
-      <Card className="mb-12">
+      <Card className="mb-12 backdrop-blur-md bg-white/70 dark:bg-black/70">
         <CardHeader>
           <h2 className="text-2xl font-semibold">Teal Palette</h2>
         </CardHeader>
@@ -93,7 +93,7 @@ export default function ColorsPage() {
       </Card>
 
       {/* Gradients */}
-      <Card className="mb-12">
+      <Card className="mb-12 backdrop-blur-md bg-white/70 dark:bg-black/70">
         <CardHeader>
           <h2 className="text-2xl font-semibold">Brand Gradients</h2>
         </CardHeader>
@@ -136,7 +136,7 @@ export default function ColorsPage() {
       </Card>
 
       {/* Functional Colors */}
-      <Card className="mb-12">
+      <Card className="mb-12 backdrop-blur-md bg-white/70 dark:bg-black/70">
         <CardHeader>
           <h2 className="text-2xl font-semibold">Functional Colors</h2>
         </CardHeader>
@@ -165,7 +165,7 @@ export default function ColorsPage() {
       </Card>
 
       {/* Effects Demo */}
-      <Card className="mb-12">
+      <Card className="mb-12 backdrop-blur-md bg-white/70 dark:bg-black/70">
         <CardHeader>
           <h2 className="text-2xl font-semibold">Special Effects</h2>
         </CardHeader>
@@ -214,7 +214,7 @@ export default function ColorsPage() {
       </Card>
 
       {/* Usage Guidelines */}
-      <Card>
+      <Card className="backdrop-blur-md bg-white/70 dark:bg-black/70">
         <CardHeader>
           <h2 className="text-2xl font-semibold">Usage Guidelines</h2>
         </CardHeader>
