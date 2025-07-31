@@ -65,9 +65,7 @@ export function NHLogoFromFile({ className = "h-8 w-auto" }: NHLogoProps) {
         alt="Noise Heroes" 
         className={className}
         style={{
-          filter: currentTheme === 'light' 
-            ? 'brightness(0) saturate(100%) invert(27%) sepia(84%) saturate(2515%) hue-rotate(5deg) brightness(95%) contrast(103%)' 
-            : 'none',
+          filter: currentTheme === 'dark' ? 'invert(1)' : 'none',
           transition: 'filter 0.3s ease',
         }}
       />

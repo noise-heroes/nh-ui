@@ -37,6 +37,7 @@ export function SiteHeader() {
       isBordered 
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
+      className="backdrop-blur-md bg-white/70 dark:bg-black/70"
     >
       <NavbarContent>
         <NavbarMenuToggle
