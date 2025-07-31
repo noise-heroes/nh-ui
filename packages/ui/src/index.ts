@@ -1,10 +1,5 @@
-// Main entry point for @nh-ui/ui package
+// Logo component
+export { NHLogoFromFile } from './components/nh-logo';
 
-// Export all components
-export * from './components';
-
-// Export all styles
-export * from './styles';
-
-// Export component types
-export type { Track } from './components/nh-music-player';
+// Re-export everything from HeroUI
+export * from '@heroui/react';

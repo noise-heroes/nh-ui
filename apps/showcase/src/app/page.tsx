@@ -17,7 +17,6 @@ import {
   Code,
   Spacer,
 } from "@heroui/react";
-import { NHWallpaper } from "@nh-ui/ui";
 import { 
   SparklesIcon,
   SwatchIcon,
@@ -33,8 +32,6 @@ export default function ShowcasePage() {
 
   return (
     <>
-      <NHWallpaper variant="subtle" animated />
-      
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-16 text-center relative z-10">
         <div className="flex justify-center mb-6">
