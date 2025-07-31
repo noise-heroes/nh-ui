@@ -4,6 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fix logo colors */
+.dark img[alt="Noise Heroes"] {
+  filter: invert(1) brightness(2);
+}
+
+/* Fix dark mode backgrounds */
+html {
+  background-color: white;
+}
+
+html.dark {
+  background-color: black;
+}
+
+body {
+  background-color: transparent;
+}
+
 
 /* Override HeroUI/NextUI default colors with Noise Heroes colors */
 @layer base {
