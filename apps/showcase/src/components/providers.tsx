@@ -5,15 +5,15 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <HeroUIProvider>
-      <NextThemesProvider 
-        attribute="class" 
-        defaultTheme="system" 
-        enableSystem
-        themes={["light", "dark"]}
-      >
+    <NextThemesProvider 
+      attribute="class" 
+      defaultTheme="light" 
+      enableSystem
+      storageKey="nh-ui-theme"
+    >
+      <HeroUIProvider>
         {children}
-      </NextThemesProvider>
-    </HeroUIProvider>
+      </HeroUIProvider>
+    </NextThemesProvider>
   );
 }

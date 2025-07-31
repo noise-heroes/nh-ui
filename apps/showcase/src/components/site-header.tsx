@@ -15,13 +15,18 @@ import {
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NHLogoFromFile } from "@nh-ui/ui";
 
 export function SiteHeader() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const menuItems = [
     { label: "Home", href: "/" },
@@ -72,9 +77,9 @@ export function SiteHeader() {
           <Button
             isIconOnly
             variant="light"
-            onPress={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onPress={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
           >
-            {theme === "dark" ? (
+            {mounted && resolvedTheme === "dark" ? (
               <SunIcon className="h-5 w-5" />
             ) : (
               <MoonIcon className="h-5 w-5" />
