@@ -1,11 +1,13 @@
 "use client";
 
 import { Card, CardBody, CardHeader, Chip, Button } from "@heroui/react";
-import { colors, darkColors, withOpacity } from "@nh-ui/ui";
+import { colors, darkColors, withOpacity, NHWallpaper } from "@nh-ui/ui";
 
 export default function ColorsPage() {
   return (
-    <div className="min-h-screen p-8 max-w-7xl mx-auto">
+    <>
+      <NHWallpaper variant="subtle" animated />
+      <div className="min-h-screen p-8 max-w-7xl mx-auto relative z-10">
       <div className="mb-12">
         <h1 className="text-5xl font-bold mb-4">Official Color System</h1>
         <p className="text-xl text-gray-600">
@@ -240,5 +242,6 @@ export default function ColorsPage() {
         </CardBody>
       </Card>
     </div>
+    </>
   );
 }
