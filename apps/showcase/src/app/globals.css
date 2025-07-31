@@ -4,14 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ensure proper dark mode backgrounds */
-html {
-  @apply bg-white dark:bg-black;
-}
-
-body {
-  @apply bg-transparent;
-}
 
 /* Override HeroUI/NextUI default colors with Noise Heroes colors */
 @layer base {

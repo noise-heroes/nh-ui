@@ -45,25 +45,11 @@ export function NHLogo({ className = "h-8 w-auto", width, height }: NHLogoProps)
 
 // Alternative: Use the actual SVG file with dynamic filter
 export function NHLogoFromFile({ className = "h-8 w-auto" }: NHLogoProps) {
-  const { theme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <div className={className} />;
-  }
-
-  // Use a class-based approach for better reliability
-  const isDark = resolvedTheme === 'dark';
-  
   return (
     <img 
       src="/NH-logo-RGB-hr.svg" 
       alt="Noise Heroes" 
-      className={`${className} ${isDark ? 'invert brightness-200' : ''} transition-all duration-300`}
+      className={`${className} dark:invert dark:brightness-200 transition-all duration-300`}
     />
   );
 }
