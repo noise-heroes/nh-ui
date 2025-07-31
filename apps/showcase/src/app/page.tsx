@@ -17,6 +17,7 @@ import {
   Code,
   Spacer,
 } from "@heroui/react";
+import { NHWallpaper } from "@nh-ui/ui";
 import { 
   SparklesIcon,
   SwatchIcon,
@@ -32,8 +33,10 @@ export default function ShowcasePage() {
 
   return (
     <>
+      <NHWallpaper variant="subtle" animated />
+      
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-16 text-center">
+      <section className="container mx-auto px-6 py-16 text-center relative z-10">
         <div className="flex justify-center mb-6">
           <Badge content="NEW" color="success" placement="top-right" shape="circle">
             <Avatar
@@ -82,7 +85,7 @@ export default function ShowcasePage() {
       </section>
 
       {/* Component Showcase Tabs */}
-      <section className="container mx-auto px-6 py-16">
+      <section className="container mx-auto px-6 py-16 relative z-10">
         <Tabs 
           aria-label="Component showcase" 
           selectedKey={selected}
@@ -141,6 +144,32 @@ export default function ShowcasePage() {
                 <Link href="/minimal" color="primary">
                   <Button color="primary" variant="flat" className="rounded-full">
                     Explore Minimal Design
+                  </Button>
+                </Link>
+              </CardBody>
+            </Card>
+          </Tab>
+          
+          <Tab
+            key="wallpaper"
+            title={
+              <div className="flex items-center space-x-2">
+                <div className="w-5 h-5 rounded bg-gradient-to-br from-orange-500 to-teal-500"></div>
+                <span>Wallpaper</span>
+              </div>
+            }
+          >
+            <Card className="mt-6">
+              <CardHeader>
+                <h3 className="text-xl font-semibold">Wallpaper Backgrounds</h3>
+              </CardHeader>
+              <CardBody>
+                <p className="text-default-600 mb-4">
+                  Beautiful gradient backgrounds that enhance glass effects with subtle animations.
+                </p>
+                <Link href="/wallpaper" color="primary">
+                  <Button color="primary" variant="flat" endContent={<SparklesIcon className="h-4 w-4" />}>
+                    Explore Wallpapers
                   </Button>
                 </Link>
               </CardBody>
@@ -290,7 +319,7 @@ export default function App() {
       </section>
 
       {/* Features Grid */}
-      <section className="container mx-auto px-6 py-16">
+      <section className="container mx-auto px-6 py-16 relative z-10">
         <h2 className="text-3xl font-bold text-center mb-12">Why Choose NH-UI?</h2>
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="p-6">

@@ -1,19 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import dynamic from 'next/dynamic';
 import { NHWallpaper, NHButton, NHIconButton } from "@nh-ui/ui";
+import { useTheme } from "next-themes";
 
 const NHGlassCard = dynamic(
   () => import("@nh-ui/ui").then(mod => ({ default: mod.NHGlassCard })),
   { ssr: false }
 );
-import { CardBody, CardHeader, RadioGroup, Radio, Switch } from "@heroui/react";
-import { SparklesIcon } from "@heroicons/react/24/outline";
+import { CardBody, CardHeader, RadioGroup, Radio, Switch, Button } from "@heroui/react";
+import { SparklesIcon, SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 
 export default function WallpaperPage() {
   const [variant, setVariant] = useState<'subtle' | 'vibrant' | 'mesh' | 'aurora'>('subtle');
   const [animated, setAnimated] = useState(true);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -21,9 +28,26 @@ export default function WallpaperPage() {
       
       <div className="relative z-10 p-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4">Wallpaper Backgrounds</h1>
+          <div className="flex justify-between items-center mb-6">
+            <div className="w-12"></div>
+            <h1 className="text-5xl font-bold">Wallpaper Backgrounds</h1>
+            {mounted && (
+              <Button
+                isIconOnly
+                variant="flat"
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="rounded-full"
+              >
+                {theme === 'dark' ? (
+                  <SunIcon className="h-5 w-5" />
+                ) : (
+                  <MoonIcon className="h-5 w-5" />
+                )}
+              </Button>
+            )}
+          </div>
           <p className="text-xl text-gray-600 dark:text-gray-400">
-            Subtle gradients that enhance our glass effects
+            Subtle gradients that enhance our glass effects in both light and dark modes
           </p>
         </div>
 
