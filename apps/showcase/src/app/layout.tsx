@@ -23,7 +23,7 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
-          <div className="min-h-screen bg-background">
+          <div className="min-h-screen">
             <SiteHeader />
             {children}
           </div>
