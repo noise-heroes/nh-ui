@@ -56,17 +56,14 @@ export function NHLogoFromFile({ className = "h-8 w-auto" }: NHLogoProps) {
     return <div className={className} />;
   }
 
-  const currentTheme = resolvedTheme || theme;
+  // Use a class-based approach for better reliability
+  const isDark = resolvedTheme === 'dark';
   
   return (
     <img 
       src="/NH-logo-RGB-hr.svg" 
       alt="Noise Heroes" 
-      className={className}
-      style={{
-        filter: currentTheme === 'dark' ? 'invert(1) brightness(2)' : 'none',
-        transition: 'filter 0.3s ease',
-      }}
+      className={`${className} ${isDark ? 'invert brightness-200' : ''} transition-all duration-300`}
     />
   );
 }
