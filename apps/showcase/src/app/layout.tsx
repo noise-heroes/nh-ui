@@ -21,7 +21,7 @@ export default function RootLayout({
         <meta name="build-time" content={buildTime} />
         <meta name="ui-version" content="heroui-2.8.2" />
       </head>
-      <body className="bg-white dark:bg-black">
+      <body>
         <Providers>
           <div className="min-h-screen">
             <SiteHeader />

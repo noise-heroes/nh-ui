@@ -89,6 +89,8 @@ const sharedConfig: Config = {
             DEFAULT: "#FF3333",
             foreground: "#FFFFFF",
           },
+          background: "#FFFFFF",
+          foreground: "#000000",
         },
       },
       dark: {
@@ -134,9 +136,8 @@ const sharedConfig: Config = {
             DEFAULT: "#FF6666",
             foreground: "#FFFFFF",
           },
-          background: {
-            DEFAULT: "#000000",
-          },
+          background: "#000000",
+          foreground: "#FFFFFF",
           content1: "#0A0A0A",
           content2: "#171717",
           content3: "#262626",
