@@ -16,7 +16,7 @@ export default function ColorsPage() {
       </div>
 
       {/* Official Brand Colors */}
-      <Card className="mb-12">
+      <Card className="mb-12 backdrop-blur-md bg-white/70 dark:bg-black/70">
         <CardHeader>
           <h2 className="text-2xl font-semibold">Official Brand Colors</h2>
         </CardHeader>
@@ -51,7 +51,7 @@ export default function ColorsPage() {
       </Card>
 
       {/* Extended Orange Palette */}
-      <Card className="mb-12">
+      <Card className="mb-12 backdrop-blur-md bg-white/70 dark:bg-black/70">
         <CardHeader>
           <h2 className="text-2xl font-semibold">Orange Palette</h2>
         </CardHeader>
