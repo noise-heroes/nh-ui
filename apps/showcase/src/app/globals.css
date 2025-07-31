@@ -4,6 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force proper backgrounds */
+:root {
+  background-color: white;
+}
+
+:root.dark {
+  background-color: black;
+}
+
+html {
+  background-color: inherit !important;
+}
+
+body {
+  background-color: transparent !important;
+}
+
 
 
 /* Override HeroUI/NextUI default colors with Noise Heroes colors */
