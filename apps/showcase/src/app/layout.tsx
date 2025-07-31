@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { SiteHeader } from "@/components/site-header";
-import { ThemeDebug } from "@/components/theme-debug";
 
 export const metadata: Metadata = {
   title: "NH-UI Showcase - Noise Heroes Design System",
@@ -22,7 +21,7 @@ export default function RootLayout({
         <meta name="build-time" content={buildTime} />
         <meta name="ui-version" content="heroui-2.8.2" />
       </head>
-      <body>
+      <body className="bg-white dark:bg-black">
         <Providers>
           <div className="min-h-screen">
             <SiteHeader />
@@ -32,7 +31,6 @@ export default function RootLayout({
           <div className="fixed bottom-2 right-2 text-xs text-gray-500 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded opacity-50 hover:opacity-100 transition-opacity">
             HeroUI • {buildTime}
           </div>
-          <ThemeDebug />
         </Providers>
       </body>
     </html>
