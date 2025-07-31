@@ -33,29 +33,27 @@ export function NHWallpaper({
     subtle: {
       light: (
         <>
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-200 via-orange-50 to-teal-100" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-orange-100 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-teal-100 to-transparent" />
+          <div className="absolute inset-0 bg-white" />
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-50/20 via-transparent to-teal-50/20" />
         </>
       ),
       dark: (
         <>
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-950 via-gray-900 to-teal-950" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-orange-900/30 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-teal-900/30 to-transparent" />
+          <div className="absolute inset-0 bg-black" />
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-950/20 via-transparent to-teal-950/20" />
         </>
       ),
     },
     vibrant: {
       light: (
         <>
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-white to-teal-100" />
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-200/40 via-transparent to-teal-200/40" />
+          <div className="absolute inset-0 bg-white" />
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 via-transparent to-teal-100/30" />
           {animated && (
             <motion.div
-              className="absolute inset-0 bg-gradient-to-t from-orange-300/20 via-transparent to-teal-300/20"
+              className="absolute inset-0 bg-gradient-to-t from-orange-50/20 via-transparent to-teal-50/20"
               animate={{
-                opacity: [0.3, 0.5, 0.3],
+                opacity: [0.5, 0.8, 0.5],
               }}
               transition={{
                 duration: 8,
@@ -68,13 +66,13 @@ export function NHWallpaper({
       ),
       dark: (
         <>
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-900 via-black to-teal-900" />
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-950/50 via-transparent to-teal-950/50" />
+          <div className="absolute inset-0 bg-black" />
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-900/30 via-transparent to-teal-900/30" />
           {animated && (
             <motion.div
-              className="absolute inset-0 bg-gradient-to-t from-orange-800/20 via-transparent to-teal-800/20"
+              className="absolute inset-0 bg-gradient-to-t from-orange-950/20 via-transparent to-teal-950/20"
               animate={{
-                opacity: [0.2, 0.4, 0.2],
+                opacity: [0.3, 0.6, 0.3],
               }}
               transition={{
                 duration: 8,
@@ -94,9 +92,9 @@ export function NHWallpaper({
             className="absolute inset-0 opacity-40"
             style={{
               backgroundImage: `
-                radial-gradient(at 20% 30%, rgba(255, 85, 0, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 70%, rgba(0, 217, 181, 0.3) 0px, transparent 50%),
-                radial-gradient(at 50% 50%, rgba(255, 85, 0, 0.1) 0px, transparent 50%)
+                radial-gradient(at 20% 30%, rgba(255, 85, 0, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 70%, rgba(0, 217, 181, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(255, 85, 0, 0.05) 0px, transparent 50%)
               `,
             }}
           />
@@ -105,7 +103,7 @@ export function NHWallpaper({
               className="absolute inset-0"
               style={{
                 backgroundImage: `
-                  radial-gradient(circle at 30% 40%, rgba(255, 85, 0, 0.2) 0px, transparent 40%)
+                  radial-gradient(circle at 30% 40%, rgba(255, 85, 0, 0.1) 0px, transparent 40%)
                 `,
               }}
               animate={{
@@ -123,13 +121,13 @@ export function NHWallpaper({
       ),
       dark: (
         <>
-          <div className="absolute inset-0 bg-gray-900" />
+          <div className="absolute inset-0 bg-black" />
           <div 
-            className="absolute inset-0 opacity-40"
+            className="absolute inset-0 opacity-60"
             style={{
               backgroundImage: `
-                radial-gradient(at 20% 30%, rgba(255, 85, 0, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 70%, rgba(0, 217, 181, 0.3) 0px, transparent 50%),
+                radial-gradient(at 20% 30%, rgba(255, 85, 0, 0.2) 0px, transparent 50%),
+                radial-gradient(at 80% 70%, rgba(0, 217, 181, 0.2) 0px, transparent 50%),
                 radial-gradient(at 50% 50%, rgba(255, 85, 0, 0.1) 0px, transparent 50%)
               `,
             }}
@@ -139,7 +137,7 @@ export function NHWallpaper({
               className="absolute inset-0"
               style={{
                 backgroundImage: `
-                  radial-gradient(circle at 30% 40%, rgba(255, 85, 0, 0.2) 0px, transparent 40%)
+                  radial-gradient(circle at 30% 40%, rgba(255, 85, 0, 0.15) 0px, transparent 40%)
                 `,
               }}
               animate={{
@@ -159,13 +157,13 @@ export function NHWallpaper({
     aurora: {
       light: (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-orange-50/20 to-white" />
+          <div className="absolute inset-0 bg-white" />
           {animated && (
             <>
               <motion.div
-                className="absolute inset-0 opacity-30"
+                className="absolute inset-0 opacity-20"
                 style={{
-                  background: 'linear-gradient(45deg, transparent, rgba(255, 85, 0, 0.3), transparent)',
+                  background: 'linear-gradient(45deg, transparent, rgba(255, 85, 0, 0.1), transparent)',
                 }}
                 animate={{
                   x: ['-100%', '100%'],
@@ -177,9 +175,9 @@ export function NHWallpaper({
                 }}
               />
               <motion.div
-                className="absolute inset-0 opacity-30"
+                className="absolute inset-0 opacity-20"
                 style={{
-                  background: 'linear-gradient(-45deg, transparent, rgba(0, 217, 181, 0.3), transparent)',
+                  background: 'linear-gradient(-45deg, transparent, rgba(0, 217, 181, 0.1), transparent)',
                 }}
                 animate={{
                   x: ['100%', '-100%'],
@@ -196,13 +194,13 @@ export function NHWallpaper({
       ),
       dark: (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-orange-950/20 to-gray-900" />
+          <div className="absolute inset-0 bg-black" />
           {animated && (
             <>
               <motion.div
-                className="absolute inset-0 opacity-30"
+                className="absolute inset-0 opacity-40"
                 style={{
-                  background: 'linear-gradient(45deg, transparent, rgba(255, 85, 0, 0.3), transparent)',
+                  background: 'linear-gradient(45deg, transparent, rgba(255, 85, 0, 0.2), transparent)',
                 }}
                 animate={{
                   x: ['-100%', '100%'],
@@ -214,9 +212,9 @@ export function NHWallpaper({
                 }}
               />
               <motion.div
-                className="absolute inset-0 opacity-30"
+                className="absolute inset-0 opacity-40"
                 style={{
-                  background: 'linear-gradient(-45deg, transparent, rgba(0, 217, 181, 0.3), transparent)',
+                  background: 'linear-gradient(-45deg, transparent, rgba(0, 217, 181, 0.2), transparent)',
                 }}
                 animate={{
                   x: ['100%', '-100%'],
