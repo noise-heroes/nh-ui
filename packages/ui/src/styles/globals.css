@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Override HeroUI/NextUI default colors with Noise Heroes colors */
+/* Override HeroUI default colors with Noise Heroes colors */
 @layer base {
   :root {
     /* Primary - Orange */

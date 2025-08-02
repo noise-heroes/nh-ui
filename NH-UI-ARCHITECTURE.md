@@ -1,7 +1,7 @@
 # NH-UI Design System Architecture
 
 ## Vision Statement
-NH-UI is a premium design system that embodies the Noise Heroes brand identity through exceptional craftsmanship, attention to detail, and delightful developer experience. Built as an abstraction layer over HeroUI/NextUI, it provides a complete toolkit for building world-class applications.
+NH-UI is a premium design system that embodies the Noise Heroes brand identity through exceptional craftsmanship, attention to detail, and delightful developer experience. Built as an abstraction layer over HeroUI, it provides a complete toolkit for building world-class applications.
 
 ## Core Principles
 

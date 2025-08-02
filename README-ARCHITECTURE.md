@@ -2,7 +2,7 @@
 
 ## 🎯 Vision
 
-NH-UI is a premium design system that rivals Apple's in quality and attention to detail. Built as an abstraction layer over HeroUI/NextUI, it provides a complete toolkit for building world-class applications while embodying the Noise Heroes brand identity.
+NH-UI is a premium design system that rivals Apple's in quality and attention to detail. Built as an abstraction layer over HeroUI, it provides a complete toolkit for building world-class applications while embodying the Noise Heroes brand identity.
 
 ## 🎨 Brand Identity
 
@@ -45,7 +45,7 @@ NH-UI is a premium design system that rivals Apple's in quality and attention to
 4. **Accessibility First**: WCAG 2.1 AAA compliance target
 
 ### Technical Stack
-- **Base**: HeroUI/NextUI components
+- **Base**: HeroUI components
 - **Styling**: CSS-in-JS with Emotion/Stitches
 - **Types**: 100% TypeScript
 - **Testing**: Jest + React Testing Library
