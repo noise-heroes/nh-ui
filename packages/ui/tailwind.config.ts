@@ -25,6 +25,26 @@ const config: Config = {
         ...colors.effects.glow,
         ...colors.effects.neon,
       },
+      animation: {
+        shimmer: "shimmer 2s linear infinite",
+        stripes: "stripes 1s linear infinite",
+        "progress-indeterminate": "progress-indeterminate 1.5s ease-in-out infinite",
+      },
+      keyframes: {
+        shimmer: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+        stripes: {
+          "0%": { transform: "translateX(-20px)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        "progress-indeterminate": {
+          "0%": { transform: "translateX(-100%)" },
+          "50%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
     },
   },
   darkMode: "class",

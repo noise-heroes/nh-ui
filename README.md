@@ -19,8 +19,7 @@ This monorepo includes:
 
 ### Apps
 
-- `showcase` - Interactive design system showcase and playground
-- `docs` - Documentation site
+- `docs` - Noise Heroes Human Interface Design Guidelines
 - `template` - Starter template for new apps
 
 ### Packages
@@ -43,7 +42,7 @@ pnpm install
 # Start development
 pnpm dev
 
-# Open the showcase
+# Open the documentation
 open http://localhost:3000
 ```
 

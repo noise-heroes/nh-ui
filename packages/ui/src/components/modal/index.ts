@@ -1,0 +1,2 @@
+export { NHModal, NHModalContent, NHModalHeader, NHModalBody, NHModalFooter } from './modal';
+export type { NHModalProps, NHModalContentProps, NHModalHeaderProps, NHModalBodyProps, NHModalFooterProps } from './modal';

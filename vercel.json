@@ -1,7 +1,7 @@
 {
-  "buildCommand": "pnpm turbo build --filter=@nh-ui/showcase",
-  "outputDirectory": "apps/showcase/.next",
+  "buildCommand": "pnpm turbo build --filter=@nh-ui/docs",
+  "outputDirectory": "apps/docs/.next",
   "installCommand": "pnpm install",
   "framework": null,
-  "devCommand": "pnpm turbo dev --filter=@nh-ui/showcase"
+  "devCommand": "pnpm turbo dev --filter=@nh-ui/docs"
 }
