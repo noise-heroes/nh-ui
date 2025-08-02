@@ -1,6 +1,7 @@
 "use client";
 
-import { NHProvider, ThemeProvider as NextThemesProvider } from "@nh-ui/ui";
+import { NHProvider } from "@nh-ui/ui";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
