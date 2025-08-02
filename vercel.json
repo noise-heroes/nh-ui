@@ -1,8 +1,5 @@
 {
-  "buildCommand": "pnpm turbo build --filter=@nh-ui/docs",
-  "outputDirectory": "apps/docs/.next",
+  "buildCommand": "cd apps/docs && pnpm build",
   "installCommand": "pnpm install",
-  "framework": null,
-  "devCommand": "pnpm turbo dev --filter=@nh-ui/docs",
-  "public": true
+  "framework": "nextjs"
 }
