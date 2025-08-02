@@ -1,4 +1,7 @@
 {
-  "buildCommand": "turbo build --filter=@nh-ui/docs",
-  "installCommand": "pnpm install"
+  "buildCommand": "pnpm install && pnpm turbo build --filter=@nh-ui/docs",
+  "outputDirectory": "apps/docs/.next",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "framework": "nextjs",
+  "ignoreCommand": "git diff HEAD^ HEAD --quiet ."
 }
